@@ -1,120 +1,187 @@
-import { useContext, useEffect, useState } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { AuthContext } from '../providers/AuthProvider';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import React, { useContext, useEffect, useState } from 'react';
+import { FacebookAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
-import SocialLogin from '../../Components/SocialLogin/SocialLogin';
+import axios from 'axios';
+import { AuthContext } from '../providers/AuthProvider';
+import useAuth from '../../hooks/useAuth';
+import { Button, TextField } from '@mui/material';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
+// import { Button, TextField } from '@material-ui/core';
+
 
 const Login = () => {
+  const [usr, setUsr] = useState(null);
+  const { googleSignIn } = useAuth();
+  const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
 
-    const [disabled, setDisabled] = useState(true);
-    const { signIn } = useContext(AuthContext);
-    const navigate = useNavigate();
-    const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log('location.state', location.state)
 
-    const from = location.state?.from?.pathname || "/";
-    console.log('state in the location login page', location.state);
-
-    useEffect(() => {
-        loadCaptchaEnginge(6);
-    }, [])
-
-    const handleLogin = event => {
-
-        event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password);
-        signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                Swal.fire({
-                    title: "User Login Successful .",
-                    showClass: {
-                        popup: `
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: "User Login Successful .",
+          showClass: {
+            popup: `
                         animate__animated
                         animate__fadeInUp
                         animate__faster
                       `
-                    },
-                    hideClass: {
-                        popup: `
+          },
+          hideClass: {
+            popup: `
                         animate__animated
                         animate__fadeOutDown
                         animate__faster
                       `
-                    }
-                });
-                navigate(from, { replace: true });
-            })
-    }
+          }
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((error)=> {
+        console.error(error);
+        toast.error('Invalid UserEmail/Password');
+      })
+  }
 
-    const handleValidateCaptcha = (e) => {
-        // const user_captcha_value = captchaRef.current.value;
-        const user_captcha_value = e.target.value;
 
-        if (validateCaptcha(user_captcha_value) == true) {
-            // alert('Captcha Matched');
-            setDisabled(false);
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        console.log(result.user)
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName
         }
+        axiosPublic.post('/users', userInfo)
+          .then(res => {
+            console.log(res.data)
+            navigate('/');
+          })
+      });
+  };
 
-        else {
-            alert('Captcha Does Not Match');
-            setDisabled(true);
-        }
-    }
+  //  ---------- 
+  // useEffect(() => {
+  //   if (usr) {
+  //     navigate(location?.state ? location.state : '/');
+  //   }
+  // }, [usr, location, navigate]);
 
-    return (
-        <>
-            <Helmet>
-                <title>Bistro Boss || Login In</title>
-            </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogin} className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <LoadCanvasTemplate />
-                                </label>
-                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered" />
-                                {/* <button className='btn btn-outline btn-xs mt-2'>Validate</button> */}
-                            </div>
-                            <div className="form-control mt-6">
-                                {/* TODO: apply disabled for re captcha */}
-                                {/* <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" /> */}
-                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
-                            </div>
-                        </form>
-                        <p className='p-4'><small>New Here ? <Link to="/signUp">Create an account</Link> </small></p>
-                       <SocialLogin></SocialLogin>
-                    </div>
-                </div>
+
+
+  return (
+    <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('path/to/your/background-image.jpg')" }}>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
+
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-600 mb-6 text-center animate__animated animate__fadeInDown">
+            Login now!
+          </h1>
+
+          <form onSubmit={handleLogin}>
+            <div className="mb-4">
+              <TextField
+                label="Email"
+                type="email"
+                name="email"
+                placeholder="email"
+                required
+                fullWidth
+              />
             </div>
-        </>
-    );
+            <div className="mb-6">
+              <TextField
+                label="Password"
+                type="password"
+                name="password"
+                required
+                placeholder="password"
+                fullWidth
+              />
+              <div className="text-right">
+                <Link to="#" className="text-blue-500 text-sm">
+                  Forgot password?
+                </Link>
+              </div>
+            </div>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              className="h-11 mb-4"
+            >
+              Login
+            </Button>
+          </form>
+
+          <p className="text-center text-lg mb-4">
+            New to this site? Please{' '}
+            <Link to="/register" className="text-blue-600">
+              Register
+            </Link>
+          </p>
+
+          <div className="text-center mb-4">
+            <span className="text-lg font-semibold">or</span>
+          </div>
+
+          <div>
+            <Button
+              onClick={handleGoogleSignIn}
+              variant="outlined"
+              color="primary"
+              fullWidth
+              startIcon={<FcGoogle />}
+              className="mb-4"
+            >
+              Continue with Google
+            </Button>
+            {/* <Button
+              onClick={handleGithubSignIn}
+              variant="outlined"
+              color="primary"
+              fullWidth
+              startIcon={<FaGithub />}
+              className="mb-4"
+            >
+              Continue with GitHub
+            </Button> */}
+          </div>
+
+          <p className="text-center text-lg">
+            Go back to{' '}
+            <Link to="/" className="text-blue-600">
+              Home
+            </Link>
+          </p>
+        </div>
+      </div>
+
+      <ToastContainer />
+    </div>
+  );
 };
 
 export default Login;

@@ -7,7 +7,6 @@ import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
 import Order from "../Pages/Order/Order";
 import Login from "../Pages/Login/Login";
-import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Secret from "../Pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
@@ -21,6 +20,20 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import Biodatas from "../Pages/Biodatas/Biodatas";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
+import Register from "../Pages/Register/Register";
+import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
+import CheckOut from "../Pages/CheckOut/CheckOut";
+import EditBiodata from "../Pages/Dashboard/EditBiodata/EditBiodata";
+import FavouriteBiodata from "../Pages/Dashboard/FavouriteBiodata/FavouriteBiodata";
+import ViewBiodata from "../Pages/Dashboard/ViewBiodata/ViewBiodata";
+import MyContactRequest from "../Pages/Dashboard/MyContactRequest/MyContactRequest";
+import ApprovedPremium from "../Pages/Dashboard/ApprovedPremium/ApprovedPremium";
+import ApprovedContactRequest from "../Pages/Dashboard/ApprovedContactRequest/ApprovedContactRequest";
+import GotMarried from "../Pages/Dashboard/GotMarried/GotMarried";
+import AdminSuccessStory from "../Pages/Dashboard/AdminSuccessStory/AdminSuccessStory";
 
 export const router = createBrowserRouter([
     {
@@ -44,12 +57,37 @@ export const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: '/signUp',
-                element: <SignUp></SignUp>
+                path: '/register',
+                element: <Register></Register>
             },
             {
-                path: '/secret',
-                element: <PrivateRoute> <Secret></Secret> </PrivateRoute>
+                path: '/biodatas',
+                element: <Biodatas></Biodatas>
+            },
+            {
+                path: '/biodatas/:id',
+                element: <PrivateRoute><BiodataDetails></BiodataDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/biodatas/${params.id}`)  
+            },
+            {
+                path: '/payment/:id',
+                element: <Payment></Payment>,
+                // loader: ({params}) => fetch(`http://localhost:5000/biodatas/${params.id}`)  
+                loader: ({params}) => fetch(`http://localhost:5000/payment/${params.id}`)  
+            },
+            {
+                path: '/checkOut/:id',
+                // element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                element: <CheckOut></CheckOut>,
+                loader: ({params}) => fetch(`http://localhost:5000/checkOut/${params.id}`)  
+            },
+            {
+                path: '/aboutUs',
+                element:  <AboutUs></AboutUs>
+            },
+            {
+                path: '/contactUs',
+                element:  <ContactUs></ContactUs>
             }
         ]
     },
@@ -62,17 +100,33 @@ export const router = createBrowserRouter([
                 path: 'userHome',
                 element: <UserHome></UserHome>
             },
-            {
-                path: 'cart',
-                element: <Cart></Cart>
-            },
-            {
-                path: 'payment',
-                element: <Payment></Payment>
-            },
+            // {
+            //     path: 'payment',
+            //     element: <Payment></Payment>
+            // },
             {
                 path: 'paymentHistory',
                 element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: 'editBiodata',
+                element: <EditBiodata></EditBiodata>
+            },
+            {
+                path: 'favouriteBiodata',
+                element: <FavouriteBiodata></FavouriteBiodata>
+            },
+            {
+                path: 'viewBiodata',
+                element: <ViewBiodata></ViewBiodata>
+            },
+            {
+                path: 'myContactRequest',
+                element: <MyContactRequest></MyContactRequest>
+            },
+            {
+                path: 'gotMarried',
+                element: <GotMarried></GotMarried>
             },
              
 
@@ -81,24 +135,38 @@ export const router = createBrowserRouter([
                 path: 'adminHome',
                 // element: <AddItems></AddItems> 
                 element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+                // element: <AdminHome></AdminHome>
             },
-            {
-                path: 'addItems',
-                // element: <AddItems></AddItems> 
-                element: <AdminRoute><AddItems></AddItems></AdminRoute>
-            },
-            {
-                path: 'manageItems',
-                element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
-            },
-            {
-                path: 'updateItem/:id',
-                element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
-                loader: ({params}) => fetch(`https://bistro-boss-server-black-chi.vercel.app/menu/${params.id}`)
-            },
+            // {
+            //     path: 'addItems',
+            //     element: <AdminRoute><AddItems></AddItems></AdminRoute>
+            // },
+            // {
+            //     path: 'manageItems',
+            //     element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+            // },
+            // {
+            //     path: 'updateItem/:id',
+            //     element: <AdminRoute><UpdateItem></UpdateItem></AdminRoute>,
+            //     loader: ({params}) => fetch(`https://bistro-boss-server-black-chi.vercel.app/menu/${params.id}`)
+            // },
             {
                 path: 'users',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+                // element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+                // element: <AllUsers></AllUsers>
+            },
+            {
+                path: 'approvedPremium',
+                element: <AdminRoute><ApprovedPremium></ApprovedPremium></AdminRoute>
+            },
+            {
+                path: 'approvedContactRequest',
+                element: <AdminRoute><ApprovedContactRequest></ApprovedContactRequest></AdminRoute>
+            },
+            {
+                path: 'successStory',
+                element: <AdminRoute><AdminSuccessStory></AdminSuccessStory></AdminRoute>
             }
         ]
     }

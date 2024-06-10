@@ -4,6 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaBook, FaDollarSign, FaUser } from "react-icons/fa";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, PieChart, Pie, Legend } from 'recharts';
 import { data } from "autoprefixer";
+import { RiAdminFill } from "react-icons/ri";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -16,7 +17,7 @@ const AdminHome = () => {
     const { data: stats = {} } = useQuery({
         queryKey: ['admin-stats'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/admin-stats');
+            // const res = await axiosSecure.get('/admin-stats');
             return res.data;
         }
     });
@@ -25,7 +26,7 @@ const AdminHome = () => {
     const { data: chartData = [] } = useQuery({
         queryKey: ['order-stats'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/order-stats');
+            // const res = await axiosSecure.get('/order-stats');
             return res.data;
         }
     })
@@ -68,8 +69,8 @@ const AdminHome = () => {
 
     return (
         <div>
-            <h2 className="text-3xl">
-                <span>Hi Welcome</span>
+            <h2 className="text-3xl text-center">
+                <span>Welcome Admin: </span>
                 {
                     user?.displayName ? user.displayName : 'Back'
                 }

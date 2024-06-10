@@ -4,17 +4,25 @@ import Category from "../Category/Category";
 import Featured from "../Featured/Featured";
 import PopularMenu from "../PopularMenu/PopularMenu";
 import Testimonials from "../Testimonials/Testimonials";
+import PremiumMemberProfile from "../PremiumMemberProfile/PremiumMemberProfile";
+import HowItWorks from "../HowItWorks/HowItWorks";
+import SuccessCounter from "../SuccessCounter/SuccessCounter";
+import SuccessStory from "../SuccessStory/SuccessStory";
 
 const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Bistro Boss | Home</title>
+                <title>Matrimony Mate | Home</title>
             </Helmet>
             <Banner></Banner>
-            <Category></Category>
-            <PopularMenu></PopularMenu>
-            <Featured></Featured>
+            <PremiumMemberProfile></PremiumMemberProfile>
+            <HowItWorks></HowItWorks>
+            <SuccessCounter></SuccessCounter>
+            <SuccessStory></SuccessStory>
+            {/* <Category></Category> */}
+            {/* <PopularMenu></PopularMenu> */}
+            {/* <Featured></Featured> */}
             <Testimonials></Testimonials>
         </div>
     );

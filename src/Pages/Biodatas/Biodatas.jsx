@@ -160,6 +160,7 @@ const Biodatas = () => {
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                         {
                             filteredBiodatas?.map(biodata => <BiodataCard key={biodata._id} biodata={biodata}></BiodataCard>)
+                            // filteredBiodatas.map(biodata => <BiodataCard key={biodata._id} biodata={biodata}></BiodataCard>)
                         }
                     </div>
                 </div>
@@ -169,3 +170,4 @@ const Biodatas = () => {
 };
 
 export default Biodatas;
+

@@ -9,21 +9,17 @@ const AboutUs = () => {
                 <CardContent>
                     <Typography variant="h5" className="mb-4 text-center">Who We Are</Typography>
                     <Typography variant="body1" className="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        We are a dedicated team of professionals passionate about bringing people together. With years of experience in the matchmaking industry, we strive to provide a trusted platform where individuals can find meaningful connections and lifelong partners.
                     </Typography>
                     <Typography variant="h5" className="mb-4 text-center">Our Mission</Typography>
                     <Typography variant="body1" className="mb-4">
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Our mission is to create a secure and user-friendly environment where individuals can explore potential matches and build meaningful relationships. We aim to facilitate connections that lead to happy and successful marriages. Our commitment is to help you find your perfect match with ease and confidence.
                     </Typography>
                     <Typography variant="h5" className="mb-4 text-center">Our Team</Typography>
                     <Typography variant="body1" className="mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Our team consists of experienced professionals who are dedicated to providing exceptional service and support. We work tirelessly to ensure that your experience on our platform is positive and successful. From customer service representatives to matchmakers, each member of our team plays a vital role in helping you find your perfect partner.
                     </Typography>
                     <div className="flex justify-center items-center">
-                        {/* Team Icon Here */}
                         <span className="material-icons">group</span>
                         <Typography variant="body1" className="ml-2">Meet our dedicated team</Typography>
                     </div>

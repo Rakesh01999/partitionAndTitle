@@ -9,10 +9,10 @@ import { FaLocationDot } from "react-icons/fa6";
 const ContactUs = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-4">
-            <Typography variant="h4" className="mb-6 text-center">Contact Us</Typography>
+            <Typography variant="h4" className="mb-6 text-center text-blue-500">Contact Us</Typography>
             <Card className="max-w-lg w-full">
                 <CardContent>
-                    <Typography variant="h5" className="mb-8 text-center">Get in Touch</Typography>
+                    <Typography variant="h5" className="mb-8 text-center text-blue-600">Get in Touch</Typography>
                     <div className="flex items-center mb-2">
                         {/* Phone Icon Here */}
                         <FaPhoneVolume />

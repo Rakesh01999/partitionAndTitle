@@ -10,6 +10,11 @@ import { useContext } from "react";
 import { AuthContext } from "../Pages/providers/AuthProvider";
 import { TbLogout } from "react-icons/tb";
 import { RiAdminFill } from "react-icons/ri";
+import { MdWorkspacePremium } from "react-icons/md";
+import { IoIosGitPullRequest } from "react-icons/io";
+import { MdCelebration } from "react-icons/md";
+
+
 
 const Dashboard = () => {
     // const [cart] = useCart();
@@ -68,19 +73,19 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/approvedPremium">
-                                    <FaUsers />
+                                    <MdWorkspacePremium />
                                     Approved Premium
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/approvedContactRequest">
-                                    <FaUsers />
+                                    <IoIosGitPullRequest />
                                     Approved Contact Request
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/successStory">
-                                    <FaUsers />
+                                    <MdCelebration />
                                     Success Story
                                 </NavLink>
                             </li>

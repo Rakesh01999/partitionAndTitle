@@ -13,6 +13,9 @@ import { RiAdminFill } from "react-icons/ri";
 import { MdWorkspacePremium } from "react-icons/md";
 import { IoIosGitPullRequest } from "react-icons/io";
 import { MdCelebration } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
+import { GiEternalLove } from "react-icons/gi";
+import { MdFaceRetouchingNatural } from "react-icons/md";
 
 
 
@@ -108,7 +111,8 @@ const Dashboard = () => {
                             <>
                                 <li>
                                     <NavLink to="/dashboard/userHome">
-                                        <FaShoppingCart></FaShoppingCart>
+                                        {/* <FaShoppingCart></FaShoppingCart> */}
+                                        <FaRegUser />
                                         User Home
                                     </NavLink>
                                 </li>
@@ -124,7 +128,7 @@ const Dashboard = () => {
                                         Not History
                                     </NavLink>
                                 </li> */}
-                                
+
                                 <li>
                                     <NavLink to="/dashboard/editBiodata">
                                         <FaEdit />
@@ -151,13 +155,13 @@ const Dashboard = () => {
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/favouriteBiodata">
-                                        <FaClover />
+                                        <GiEternalLove />
                                         Favourite Biodata
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/gotMarried">
-                                        <FaClover />
+                                        <MdFaceRetouchingNatural />
                                         Got Married
                                     </NavLink>
                                 </li>

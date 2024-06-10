@@ -6,10 +6,10 @@ import { GiTeamIdea } from "react-icons/gi";
 
 const AboutUs = () => {
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center bg-white p-4">
-            <Typography variant="h4" className="mb-10 text-center text-blue-500 ">About Us</Typography>
+        <div className="min-h-screen flex flex-col justify-center items-center bg-white p-4 mt-16">
+            <Typography variant="h4" className="mb-10 text-center text-blue-500">About Us</Typography>
             {/* <Card className="max-w-lg w-full"> */}
-            <Card >
+            <Card className='mt-4'>
                 <CardContent className="hover:shadow-2xl transition duration-300 ease-in-out p-4 hover:bg-white" sx={{ backgroundColor: 'ButtonHighlight' }}>
                     <span className='flex items-center justify-center gap-2'>
                         <GrStatusUnknown className='text-xl' />

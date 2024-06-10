@@ -27,16 +27,18 @@ const PremiumMemberProfile = () => {
     const premiumUsers = premiumRequest.filter(user => user.userType === "premium");
 
     // Sort users based on age and selected order
-    // const sortedPremiumUsers = premiumUsers.sort((a, b) => {
-    //     if (sortOrder === 'ascending') {
+    const sortedPremiumUsers = premiumUsers.sort((a, b) => {
+        if (sortOrder === 'ascending') {
     //         return a.biodata.Age - b.biodata.Age;
-    //     } else {
+            return a.Age - b.Age;
+        } else {
     //         return b.biodata.Age - a.biodata.Age;
-    //     }
-    // }).slice(0, 6);
+            return b.Age - a.Age;
+        }
+    }).slice(0, 6);
 
     const handleSortOrderChange = (event) => {
-        // setSortOrder(event.target.value);
+        setSortOrder(event.target.value);
     };
 
     return (

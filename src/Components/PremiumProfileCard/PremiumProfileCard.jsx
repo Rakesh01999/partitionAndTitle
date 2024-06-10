@@ -1,21 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, CardContent, CardMedia, Typography, Modal, Box } from '@mui/material';
+import { Button, Card, CardContent, CardMedia, Typography, Modal, Box, useMediaQuery, useTheme } from '@mui/material';
 import { AuthContext } from '../../Pages/providers/AuthProvider';
-// import { AuthContext } from '../../../context/AuthContext'; // Import your AuthContext
 
 const PremiumProfileCard = ({ biodata }) => {
-    const { name, BiodataId, ProfileImage, BiodataType, Age, PermanentDivision, Occupation, _id } = biodata;
+    const { name, BiodataId, ProfileImage, BiodataType, Age, PermanentDivision, Occupation,  _id } = biodata;
     const [open, setOpen] = useState(false);
-    const navigate = useNavigate(); // Use useNavigate for navigation
-    const {  user } = useContext(AuthContext); // Get the login status from context
+    const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
 
-    // console.log(isLoggedIn);
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     const handleOpen = () => {
-        // if (!isLoggedIn) {
         if (!user) {
-            navigate('/login'); // Redirect to login page if not logged in
+            navigate('/login');
         } else {
             setOpen(true);
         }
@@ -34,7 +34,7 @@ const PremiumProfileCard = ({ biodata }) => {
                     height="200"
                     image={ProfileImage}
                     title={name}
-                    style={{ objectFit: 'contain', height: '200px' }} // Ensure the whole image is shown
+                    style={{ objectFit: 'contain', height: '200px' }}
                 />
                 <CardContent className="flex flex-col items-center gap-2">
                     <Typography variant="h5" component="div">
@@ -77,7 +77,9 @@ const PremiumProfileCard = ({ biodata }) => {
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: 600, // Make modal larger
+                        width: isSmallScreen ? '90%' : isMediumScreen ? '70%' : '50%',
+                        maxHeight: '90vh',
+                        overflowY: 'auto',
                         bgcolor: 'background.paper',
                         borderRadius: '10px',
                         boxShadow: 24,

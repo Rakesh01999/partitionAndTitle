@@ -23,7 +23,7 @@ const Home = () => {
             {/* <Category></Category> */}
             {/* <PopularMenu></PopularMenu> */}
             {/* <Featured></Featured> */}
-            <Testimonials></Testimonials>
+            {/* <Testimonials></Testimonials> */}
         </div>
     );
 };

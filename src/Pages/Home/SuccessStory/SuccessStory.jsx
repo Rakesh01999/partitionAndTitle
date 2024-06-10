@@ -55,7 +55,7 @@ const SuccessStory = () => {
       <section className="py-12">
         <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sortedStories.map((story, index) => (
-            <Card key={index} className="hover:shadow-2xl transition duration-300 ease-in-out">
+            <Card key={index} className="hover:shadow-2xl transition duration-300 ease-in-out" sx={{ backgroundColor: 'ButtonHighlight' }}>
               <CardMedia
                 component="img"
                 height="200"

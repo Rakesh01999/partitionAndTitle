@@ -74,7 +74,7 @@ const ApprovedPremium = () => {
             </Box>
             <Box className="p-4">
                 <Box className="flex justify-evenly my-4">
-                    <Typography variant="h4" className="text-3xl">All Approval Requests: {users.length}</Typography>
+                    <Typography variant="h4" className="text-3xl">All Premium Approval Requests: {users.length}</Typography>
                     {/* <Typography variant="h4" className="text-3xl">Total Users: {users.length}</Typography> */}
                 </Box>
 

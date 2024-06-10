@@ -417,7 +417,8 @@ const EditBiodata = () => {
                             fullWidth
                             margin="normal"
                             InputProps={{
-                                readOnly: true,
+                                // readOnly: true,
+                                readOnly: false,
                             }}
                         />
                         <TextField

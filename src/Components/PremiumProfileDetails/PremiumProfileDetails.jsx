@@ -1,32 +1,31 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
-import BiodataCard from '../../Components/BiodataCard/BiodataCard';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { AuthContext } from '../../Pages/providers/AuthProvider';
+import { Helmet } from 'react-helmet';
 import { Box, Button, Typography } from '@mui/material';
-import { AuthContext } from '../providers/AuthProvider';
-import Swal from 'sweetalert2';
-import { toast } from 'react-toastify';
 
-const BiodataDetails = () => {
+
+const PremiumProfileDetails = () => {
+
     const biodata = useLoaderData();
-    // console.log(biodata);
+    
     const axiosSecure = useAxiosSecure();
-    const { _id, BiodataId, name, BiodataType, ProfileImage, PermanentDivision, Age, Occupation } = biodata;
+    // const { _id, BiodataId, name, BiodataType, ProfileImage, PermanentDivision, Age, Occupation } = biodata.biodata;
     const [similarBiodatas, setSimilarBiodatas] = useState([]);
     const { user } = useContext(AuthContext);
-
-    useEffect(() => {
-        const fetchSimilarBiodatas = async () => {
-            try {
-                const response = await axiosSecure.get(`/filtered-biodatas?type=${BiodataType}&limit=3`);
-                setSimilarBiodatas(response.data);
-            } catch (error) {
-                console.error('Error fetching similar biodatas:', error);
-            }
-        };
-        fetchSimilarBiodatas();
-    }, [BiodataType, axiosSecure]);
+    console.log(biodata);
+    // useEffect(() => {
+    //     const fetchSimilarBiodatas = async () => {
+    //         try {
+    //             const response = await axiosSecure.get(`/filtered-biodatas?type=${BiodataType}&limit=3`);
+    //             setSimilarBiodatas(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching similar biodatas:', error);
+    //         }
+    //     };
+    //     fetchSimilarBiodatas();
+    // }, [BiodataType, axiosSecure]);
 
     const [favouriteBiodata, setFavouriteBiodata] = useState([]);
     useEffect(() => {
@@ -40,51 +39,52 @@ const BiodataDetails = () => {
     const email = user.email;
 
 
-    const newFavouriteBiodata = { BiodataId, name, BiodataType, ProfileImage, PermanentDivision, Age, Occupation, email }
-    // --------
+    // const newFavouriteBiodata = { BiodataId, name, BiodataType, ProfileImage, PermanentDivision, Age, Occupation, email }
 
-    const handleAddToFavouriteBiodata = async () => {
 
-        const isAlreadyFavourite = favouriteBiodata.find((favBiodata) =>
-            favBiodata.BiodataId === BiodataId && favBiodata.email === user.email
-        );
-        const userFavouriteBiodata = favouriteBiodata.filter((favBiodata) => favBiodata.email === user.email);
-        // console.log('userFavouriteBiodata', userFavouriteBiodata.length);
 
-        // if already exist or not 
-        if (isAlreadyFavourite) {
-            Swal.fire({
-                title: 'Error!',
-                text: 'You have already add this biodata to favourite collection. ',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-            // toast.error("adding a biodata twice for a single user is not allowed ");
-            return;
-        }
-        else {
+    // const handleAddToFavouriteBiodata = async () => {
 
-            try {
-                // const response = await axiosSecure.post('/favouriteBiodata', biodata);
-                const response = await axiosSecure.post('/favouriteBiodata', newFavouriteBiodata);
-                console.log('Biodata added to favorite collection:', response.data);
-                // You can show a success message or perform any other desired action
-                Swal.fire({
-                    title: 'success!',
-                    text: 'Successfully added this biodata to favourite collection. ',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
-            }
-            catch (error) {
-                console.error('Error adding biodata to favorite collection:', error);
-            }
-        }
-    }
+    //     const isAlreadyFavourite = favouriteBiodata.find((favBiodata) =>
+    //         favBiodata.BiodataId === BiodataId && favBiodata.email === user.email
+    //     );
+    //     const userFavouriteBiodata = favouriteBiodata.filter((favBiodata) => favBiodata.email === user.email);
+    //     // console.log('userFavouriteBiodata', userFavouriteBiodata.length);
 
-    const handleRequestContact = (_id) => {
-        console.log(_id);
-    }
+    //     // if already exist or not 
+    //     if (isAlreadyFavourite) {
+    //         Swal.fire({
+    //             title: 'Error!',
+    //             text: 'You have already add this biodata to favourite collection. ',
+    //             icon: 'error',
+    //             confirmButtonText: 'OK'
+    //         });
+    //         // toast.error("adding a biodata twice for a single user is not allowed ");
+    //         return;
+    //     }
+    //     else {
+
+    //         try {
+    //             // const response = await axiosSecure.post('/favouriteBiodata', biodata);
+    //             const response = await axiosSecure.post('/favouriteBiodata', newFavouriteBiodata);
+    //             console.log('Biodata added to favorite collection:', response.data);
+    //             // You can show a success message or perform any other desired action
+    //             Swal.fire({
+    //                 title: 'success!',
+    //                 text: 'Successfully added this biodata to favourite collection. ',
+    //                 icon: 'success',
+    //                 confirmButtonText: 'OK'
+    //             });
+    //         }
+    //         catch (error) {
+    //             console.error('Error adding biodata to favorite collection:', error);
+    //         }
+    //     }
+    // }
+
+    // const handleRequestContact = (_id) => {
+    //     console.log(_id);
+    // }
 
 
     return (
@@ -99,32 +99,32 @@ const BiodataDetails = () => {
                     <span className='text-2xl md:text-4xl '>Biodata Details</span>
                 </Typography>
                 <Box className="px-4">
-                    <img className="md:w-full md:h-full rounded-2xl mt-7 mx-auto" src={ProfileImage} alt="" />
+                    {/* <img className="md:w-full md:h-full rounded-2xl mt-7 mx-auto" src={biodata.biodata.ProfileImage} alt="" /> */}
                 </Box>
                 <Box className="w-full p-6 text-xl md:text-[25px] mt-28">
                     <Typography variant="h4" className="font-bold">
                         {name}
                     </Typography>
                     <Typography variant="body1" className="mt-4">
-                        <span className="font-bold">Biodata Id:</span> {BiodataId}
+                        <span className="font-bold">Biodata Id:</span> {biodata.BiodataId}
                     </Typography>
                     <hr className="my-3" />
                     <Typography variant="body1" className="my-6">
-                        <span className="font-bold">Gender:</span> {BiodataType}
+                        {/* <span className="font-bold">Gender:</span> {biodata.biodata.BiodataType} */}
                     </Typography>
                     <hr className="my-3" />
                     <Typography variant="body1">
-                        <span className="font-bold">Location:</span> {PermanentDivision}
+                        <span className="font-bold">Location:</span> {biodata.PermanentDivision}
                     </Typography>
                     <Typography variant="body1" className="my-5">
-                        <span className="font-bold">Age:</span> {Age}
+                        <span className="font-bold">Age:</span> {biodata.Age}
                     </Typography>
                     <hr className="my-3" />
                     <Box className="flex gap-4">
                         <Typography variant="body1" className="font-bold">
                             Occupation:
                         </Typography>
-                        <Typography variant="body1">{Occupation}</Typography>
+                        <Typography variant="body1">{biodata.Occupation}</Typography>
                     </Box>
                     <hr className="my-3 border-green-500" />
                 </Box>
@@ -132,7 +132,7 @@ const BiodataDetails = () => {
                 {/* Add to Favourite button  */}
                 <div className="flex justify-center">
                     <Button
-                        onClick={handleAddToFavouriteBiodata}
+                        // onClick={handleAddToFavouriteBiodata}
                         variant="contained"
                         color="primary"
                         className="mt-4 w-2/3 lg:w-full"
@@ -147,9 +147,10 @@ const BiodataDetails = () => {
                     {/* <Link to={`/payment/${BiodataId}`}> */}
                     {/* <Link to={`/payment/${_id}`}> */}
                     {/* <Link to={`/biodatas/${_id}`}> */}
-                    <Link to={`/checkOut/${_id}`}>
+                    {/* <Link to={`/checkOut/${_id}`}> */}
+                    <Link to={`/checkOut/`}>
                         <Button
-                            onClick={() => handleRequestContact(_id)}
+                            // onClick={() => handleRequestContact(biodata._id)}
                             variant="contained"
                             color="primary"
                             // className="mt-4 w-1/2"
@@ -161,7 +162,7 @@ const BiodataDetails = () => {
                 </div>
             </Box>
 
-            <Box className="max-w-[370px] md:max-w-[540px] lg:max-w-[1540px] mx-auto px-4 md:px-8 py-8 md:py-12 bg-blue-300 rounded-3xl flex flex-col items-center mb-10">
+            {/* <Box className="max-w-[370px] md:max-w-[540px] lg:max-w-[1540px] mx-auto px-4 md:px-8 py-8 md:py-12 bg-blue-300 rounded-3xl flex flex-col items-center mb-10">
                 <Typography variant="h3" className="text-center my-8 md:my-12">
                     <span className='text-2xl md:text-4xl '>Similar Biodatas</span>
                 </Typography>
@@ -170,9 +171,9 @@ const BiodataDetails = () => {
                         <BiodataCard key={similarBiodata._id} biodata={similarBiodata} />
                     ))}
                 </Box>
-            </Box>
+            </Box> */}
         </div>
     );
 };
 
-export default BiodataDetails;
+export default PremiumProfileDetails;

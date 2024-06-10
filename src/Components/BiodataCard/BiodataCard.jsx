@@ -10,25 +10,19 @@ const BiodataCard = ({ biodata }) => {
     }
 
     return (
-        // <Card className="max-w-full rounded-lg shadow-2xl mb-5 p-4 flex flex-col items-center">
-        <Card className="hover:shadow-2xl transition duration-300 ease-in-out p-4 hover:bg-blue-200" sx={{ backgroundColor: 'ButtonHighlight' }}>
+        <Card className="hover:shadow-2xl transition duration-300 ease-in-out p-4 hover:bg-blue-200" sx={{ maxWidth: 345 }}>
             <CardMedia
                 component="img"
-                alt="biodata"
+                alt={name}
+                height="200"
                 image={ProfileImage}
-                className="mt-5 "
-                style={{ height: '200px', objectFit: 'cover' }} // Set fixed height and object-fit
+                title={name}
+                style={{ objectFit: 'contain', height: '200px' }} // Ensure the whole image is shown
             />
-            <div className='flex justify-center '>
-                <Typography variant="body2" color="textSecondary" className="mt-2 w-1/2 bg-blue-300 text-black text-center ">
-                    <span className='md:text-xl'>Age: {Age}</span>
-                </Typography>
-            </div>
-            <CardContent className="flex flex-col items-center gap-2 ">
+            <CardContent className="flex flex-col items-center gap-2">
                 <Typography variant="h5" component="div">
                     {name}
                 </Typography>
-                {/* <Typography variant="body1" color="textSecondary"> */}
                 <Typography variant="body1" color="textPrimary">
                     BiodataId: {BiodataId}
                 </Typography>
@@ -38,8 +32,11 @@ const BiodataCard = ({ biodata }) => {
                 <Typography variant="body1" color="blue">
                     {BiodataType}
                 </Typography>
-                <Typography variant="body1" color="">
+                <Typography variant="body1">
                     {Occupation}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                    Age: {Age}
                 </Typography>
                 <Link to={`/biodatas/${_id}`} className="w-full">
                     <Button

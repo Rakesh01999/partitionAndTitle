@@ -34,6 +34,7 @@ import ApprovedPremium from "../Pages/Dashboard/ApprovedPremium/ApprovedPremium"
 import ApprovedContactRequest from "../Pages/Dashboard/ApprovedContactRequest/ApprovedContactRequest";
 import GotMarried from "../Pages/Dashboard/GotMarried/GotMarried";
 import AdminSuccessStory from "../Pages/Dashboard/AdminSuccessStory/AdminSuccessStory";
+import PremiumProfileDetails from "../Components/PremiumProfileDetails/PremiumProfileDetails";
 
 export const router = createBrowserRouter([
     {
@@ -68,6 +69,11 @@ export const router = createBrowserRouter([
                 path: '/biodatas/:id',
                 element: <PrivateRoute><BiodataDetails></BiodataDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/biodatas/${params.id}`)  
+            },
+            {
+                path: '/premiumRequests/:id',
+                element: <PrivateRoute><PremiumProfileDetails></PremiumProfileDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/premiumRequests/${params.id}`)  
             },
             {
                 path: '/payment/:id',

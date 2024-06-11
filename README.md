@@ -1,15 +1,11 @@
 # Matrimony Mate
-Live-Site:https://matrimony-mate.web.app/
 
-
-# Matrimony Mate
-
-**Live Site:** (https://matrimony-mate.web.app/)
+**Live Site:** [Matrimony Mate](https://matrimony-mate.web.app/)
 
 ## Admin Credentials
 
-- **Email:** admin@example.com
-- **Password:** yourpassword
+- **Email:** akashdev@gmail.com
+- **Password:** Akashdev1!
 
 ## Overview
 
@@ -25,17 +21,17 @@ Matrimony Mate is an advanced matrimonial platform designed to bring people toge
    
 4. **Privacy Controls**: Users have full control over their profiles, including the ability to hide personal information and control who can view their details.
    
-5. **Secure Messaging**: Built-in secure messaging system allows users to communicate safely without revealing personal contact information.
+5. **Biodata Statistics**: Detailed statistics for admin to monitor the number of male, female, and premium users, as well as the total biodata count.
    
-6. **Biodata Statistics**: Detailed statistics for admin to monitor the number of male, female, and premium users, as well as the total biodata count.
+6. **Revenue Tracking**: Admin can track total revenue generated from biodata contact request payments directly from the dashboard.
    
-7. **Revenue Tracking**: Admin can track total revenue generated from biodata contact request payments directly from the dashboard.
+7. **Mobile Responsive**: The site is fully responsive, providing a seamless experience across all devices including desktops, tablets, and smartphones.
    
-8. **Dedicated Support**: Our team of experienced professionals is always available to provide support and assistance to users.
+8. **Regular Updates**: Continuous improvements and updates to the platform based on user feedback to enhance functionality and user experience.
    
-9. **Mobile Responsive**: The site is fully responsive, providing a seamless experience across all devices including desktops, tablets, and smartphones.
-   
-10. **Regular Updates**: Continuous improvements and updates to the platform based on user feedback to enhance functionality and user experience.
+9. **Payment System**: Users can make payments for contact requests, ensuring a secure and efficient transaction process.
+
+10. **Premium Features**: Access exclusive features and benefits by upgrading to a premium membership, including highlighted profiles and priority support.
 
 ## How to Use
 

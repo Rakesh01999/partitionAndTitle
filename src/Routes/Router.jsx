@@ -68,24 +68,24 @@ export const router = createBrowserRouter([
             {
                 path: '/biodatas/:id',
                 element: <PrivateRoute><BiodataDetails></BiodataDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/biodatas/${params.id}`)  
+                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/biodatas/${params.id}`)  
             },
             {
                 path: '/premiumRequests/:id',
                 element: <PrivateRoute><PremiumProfileDetails></PremiumProfileDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/premiumRequests/${params.id}`)  
+                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/premiumRequests/${params.id}`)  
             },
             {
                 path: '/payment/:id',
                 element: <Payment></Payment>,
-                // loader: ({params}) => fetch(`http://localhost:5000/biodatas/${params.id}`)  
-                loader: ({params}) => fetch(`http://localhost:5000/payment/${params.id}`)  
+                // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/biodatas/${params.id}`)  
+                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/payment/${params.id}`)  
             },
             {
                 path: '/checkOut/:id',
                 // element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 element: <CheckOut></CheckOut>,
-                loader: ({params}) => fetch(`http://localhost:5000/checkOut/${params.id}`)  
+                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/checkOut/${params.id}`)  
             },
             {
                 path: '/aboutUs',

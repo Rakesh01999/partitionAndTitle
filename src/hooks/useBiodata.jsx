@@ -6,7 +6,7 @@ const useBiodata = () => {
     const [biodata, setBiodata] = useState();
     const [loading, setLoading] = useState(true);
     useEffect(()=> {
-        fetch('http://localhost:5000/biodatas')
+        fetch('https://matrimony-server-chi.vercel.app/biodatas')
         .then(res => res.json())
         .then(data => {
             setBiodata(data);

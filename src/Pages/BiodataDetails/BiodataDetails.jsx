@@ -30,7 +30,7 @@ const BiodataDetails = () => {
 
     const [favouriteBiodata, setFavouriteBiodata] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/favouriteBiodata')
+        fetch('https://matrimony-server-chi.vercel.app/favouriteBiodata')
             .then(res => res.json())
             .then(data => setFavouriteBiodata(data));
     }, [])
@@ -67,7 +67,7 @@ const BiodataDetails = () => {
             try {
                 // const response = await axiosSecure.post('/favouriteBiodata', biodata);
                 const response = await axiosSecure.post('/favouriteBiodata', newFavouriteBiodata);
-                console.log('Biodata added to favorite collection:', response.data);
+                // console.log('Biodata added to favorite collection:', response.data);
                 // You can show a success message or perform any other desired action
                 Swal.fire({
                     title: 'success!',

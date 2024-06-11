@@ -18,7 +18,7 @@ const ViewBiodata = () => {
     useEffect(() => {
         const fetchBiodatas = async () => {
             try {
-                const response = await axiosSecure.get('http://localhost:5000/biodatas');
+                const response = await axiosSecure.get('https://matrimony-server-chi.vercel.app/biodatas');
                 setBiodatas(response.data);
             } catch (error) {
                 console.error('Error fetching biodatas:', error);
@@ -107,7 +107,7 @@ const ViewBiodata = () => {
                             premiumRequeststatus: 'pending',
                             userType: 'normal'
                         }
-                        // await axiosSecure.post(`http://localhost:5000/biodatas/${biodata._id}/request-premium`);
+                        // await axiosSecure.post(`https://matrimony-server-chi.vercel.app/biodatas/${biodata._id}/request-premium`);
                         await axiosSecure.post(`/premiumRequests`, premiumRequest);
                         Swal.fire({
                             title: "Requested!",

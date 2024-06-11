@@ -29,7 +29,7 @@ const PremiumProfileDetails = () => {
 
     const [favouriteBiodata, setFavouriteBiodata] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/favouriteBiodata')
+        fetch('https://matrimony-server-chi.vercel.app/favouriteBiodata')
             .then(res => res.json())
             .then(data => setFavouriteBiodata(data));
     }, [])

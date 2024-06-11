@@ -4,7 +4,7 @@ import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
     // baseURL: 'https://bistro-boss-server-black-chi.vercel.app'
-    baseURL: 'http://localhost:5000/'
+    baseURL: 'https://matrimony-server-chi.vercel.app/'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate();

@@ -24,7 +24,7 @@ const CheckoutForm = ({ biodata }) => {
     useEffect(() => {
         axiosSecure.post('/create-payment-intent', { price: price })
             .then(res => {
-                console.log(res.data.clientSecret);
+                // console.log(res.data.clientSecret);
                 setClientSecret(res.data.clientSecret);
             })
 
@@ -75,7 +75,7 @@ const CheckoutForm = ({ biodata }) => {
             console.log('confirm error')
         }
         else {
-            console.log('paymentIntent', paymentIntent);
+            // console.log('paymentIntent', paymentIntent);
             if (paymentIntent.status === "succeeded") {
                 console.log('transaction id', paymentIntent.id);
                 setTransactionId(paymentIntent.id);
@@ -94,7 +94,7 @@ const CheckoutForm = ({ biodata }) => {
                 }
 
                 const res = await axiosSecure.post('/payments', payment);
-                console.log('payment saved', res.data);
+                // console.log('payment saved', res.data);
                 // refetch();
                 if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({

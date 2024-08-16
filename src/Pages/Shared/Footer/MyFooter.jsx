@@ -6,29 +6,31 @@ const Footer = () => {
     return (
         <footer className="bg-gray-800 text-white p-9">
             <div className="container mx-auto">
-                <Grid container spacing={4}>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom>
+                <Grid container spacing={4} className="text-center">
+                    <Grid item xs={12} sm={6} md={3} >
+                        <Typography variant="h6"  gutterBottom className="text-orange-200">
                             About Us
                         </Typography>
                         <Typography variant="body2" className="mb-4">
-                            Matrimony Mate is dedicated to helping individuals find their ideal life partner. Our platform connects people who share similar values and aspirations, making the journey of finding your soulmate a seamless experience.
+                            Welcome to Shop Ease! Discover a seamless shopping experience with our curated selection of quality products. Shop with ease and confidence!
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6" gutterBottom className="text-orange-200">
                             Contact
                         </Typography>
+
                         <Typography variant="body2" className="mb-2">
-                            123 Street, City, Country
+                            Email: rbiswas01999@gmail.com
                         </Typography>
+                        
+                        <Typography variant="body2">Phone: +880 1999647103</Typography>
                         <Typography variant="body2" className="mb-2">
-                            Email: info@example.com
+                             City:Khulna, Country:Bangladesh
                         </Typography>
-                        <Typography variant="body2">Phone: +1 234 567 890</Typography>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6" gutterBottom className="text-orange-200">
                             Quick Links
                         </Typography>
                         <ul className="space-y-2">
@@ -55,10 +57,11 @@ const Footer = () => {
                         </ul>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom>
+                        <Typography variant="h6" gutterBottom className="text-orange-200">
                             Follow Us
                         </Typography>
-                        <div className="flex space-x-4">
+                        {/* <div className="flex space-x-4 "> */}
+                        <div className="space-x-4 ">
                             <IconButton color="inherit" aria-label="Facebook">
                                 <Facebook />
                             </IconButton>
@@ -71,9 +74,9 @@ const Footer = () => {
                         </div>
                     </Grid>
                 </Grid>
-                <Typography variant="body2" className="text-center mt-8">
-                    <div className="mt-8">
-                        &copy; {new Date().getFullYear()} Matrymony Mate. All rights reserved.
+                <Typography variant="body2" className="text-center mt-8 text-orange-200">
+                    <div className="mt-10">
+                        &copy; {new Date().getFullYear()} Shop Ease. All rights reserved.
                     </div>
                 </Typography>
             </div>

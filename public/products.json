@@ -1,0 +1,413 @@
+[
+    {
+        "productName": "Wireless Headphones",
+        "image": "https://i.postimg.cc/PrxJ7dDM/61-PKmg-OKi-KL.jpg",
+        "brandName": "SoundMax",
+        "categoryName": "Electronics",
+        "priceRange": "$50 - $100",
+        "price": 79.99,
+        "dateAdded": "2024-08-01",
+        "Details": "Experience high-quality sound with these wireless headphones, featuring noise-cancellation and a comfortable over-ear design."
+    },
+    {
+        "productName": "Smartphone",
+        "image": "https://i.postimg.cc/wTGM8ncY/daniel-romero-ai-UAx-BNe3-Xk-unsplash.jpg",
+        "brandName": "TechPro",
+        "categoryName": "Electronics",
+        "priceRange": "$300 - $500",
+        "price": 449.99,
+        "dateAdded": "2024-08-02",
+        "Details": "Stay connected with this sleek smartphone, offering a powerful processor and stunning display for all your needs."
+    },
+    {
+        "productName": "Laptop",
+        "image": "https://i.postimg.cc/t4nTXD2Z/kari-shea-1-SAnr-Ixw5-OY-unsplash.jpg",
+        "brandName": "UltraTech",
+        "categoryName": "Computers",
+        "priceRange": "$800 - $1200",
+        "price": 999.99,
+        "dateAdded": "2024-08-03",
+        "Details": "Boost your productivity with this high-performance laptop, perfect for both work and entertainment."
+    },
+    {
+        "productName": "Gaming Mouse",
+        "image": "https://i.postimg.cc/3RxQwxYS/images-2.jpg",
+        "brandName": "GamerZone",
+        "categoryName": "Accessories",
+        "priceRange": "$30 - $50",
+        "price": 39.99,
+        "dateAdded": "2024-08-04",
+        "Details": "Enhance your gaming experience with this precision gaming mouse, featuring customizable buttons and RGB lighting."
+    },
+    {
+        "productName": "4K Monitor",
+        "image": "https://i.postimg.cc/SKNmnrGf/images-5.jpg",
+        "brandName": "ViewPlus",
+        "categoryName": "Computers",
+        "priceRange": "$200 - $400",
+        "price": 349.99,
+        "dateAdded": "2024-08-05",
+        "Details": "Immerse yourself in stunning visuals with this 4K monitor, ideal for gaming, editing, and entertainment."
+    },
+    {
+        "productName": "Bluetooth Speaker",
+        "image": "https://i.postimg.cc/524hgtFx/imageresize.jpg",
+        "brandName": "SoundWave",
+        "categoryName": "Electronics",
+        "priceRange": "$50 - $100",
+        "price": 69.99,
+        "dateAdded": "2024-08-06",
+        "Details": "Take your music anywhere with this portable Bluetooth speaker, offering rich sound and long battery life."
+    },
+    {
+        "productName": "Smartwatch",
+        "image": "https://i.postimg.cc/MZYtDm0Q/haylou-rs4-smart-watch-beauty-on-your-wrist-2022-02-05-61fe3183bf2e3.jpg",
+        "brandName": "WristTech",
+        "categoryName": "Wearables",
+        "priceRange": "$100 - $200",
+        "price": 149.99,
+        "dateAdded": "2024-08-07",
+        "Details": "Stay on top of your health and notifications with this stylish smartwatch, packed with features."
+    },
+    {
+        "productName": "Tablet",
+        "image": "https://i.postimg.cc/G3MGt7Jq/hq720.jpg",
+        "brandName": "TabMaster",
+        "categoryName": "Electronics",
+        "priceRange": "$200 - $400",
+        "price": 299.99,
+        "dateAdded": "2024-08-08",
+        "Details": "Enjoy entertainment and productivity on the go with this versatile tablet, perfect for all your needs."
+    },
+    {
+        "productName": "External Hard Drive",
+        "image": "https://i.postimg.cc/ht8GzhRc/adata-hd-330-3-500x500.jpg",
+        "brandName": "DataSafe",
+        "categoryName": "Storage",
+        "priceRange": "$50 - $100",
+        "price": 89.99,
+        "dateAdded": "2024-08-09",
+        "Details": "Keep your data safe and secure with this high-capacity external hard drive, perfect for backups and storage."
+    },
+    {
+        "productName": "Keyboard",
+        "image": "https://i.postimg.cc/YSbqRVSP/maxresdefault.jpg",
+        "brandName": "TypePro",
+        "categoryName": "Accessories",
+        "priceRange": "$30 - $50",
+        "price": 44.99,
+        "dateAdded": "2024-08-10",
+        "Details": "Type comfortably and efficiently with this ergonomic keyboard, designed for long hours of use."
+    },
+    {
+        "productName": "DSLR Camera",
+        "image": "https://i.postimg.cc/c1Y6yFkv/110301-zklxapdcqo-1547127551.jpg",
+        "brandName": "PhotoExpert",
+        "categoryName": "Cameras",
+        "priceRange": "$500 - $1000",
+        "price": 749.99,
+        "dateAdded": "2024-08-11",
+        "Details": "Capture stunning photos and videos with this professional-grade DSLR camera, perfect for photography enthusiasts."
+    },
+    {
+        "productName": "Gaming Chair",
+        "image": "https://i.postimg.cc/kGx5Q5RQ/lead-feature-image-1.jpg",
+        "brandName": "ComfortGamer",
+        "categoryName": "Furniture",
+        "priceRange": "$100 - $200",
+        "price": 179.99,
+        "dateAdded": "2024-08-12",
+        "Details": "Game in comfort with this ergonomic gaming chair, designed for long hours of play."
+    },
+    {
+        "productName": "Coffee Maker",
+        "image": "https://i.postimg.cc/B6Pbvpqw/71f7-Ahy-Cl-L-AC-UF350-350-QL50.jpg",
+        "brandName": "BrewMaster",
+        "categoryName": "Appliances",
+        "priceRange": "$50 - $100",
+        "price": 59.99,
+        "dateAdded": "2024-08-13",
+        "Details": "Brew the perfect cup of coffee every time with this easy-to-use coffee maker."
+    },
+    {
+        "productName": "Fitness Tracker",
+        "image": "https://i.postimg.cc/MGFXxN8Q/images-2.jpg",
+        "brandName": "FitPulse",
+        "categoryName": "Wearables",
+        "priceRange": "$50 - $100",
+        "price": 89.99,
+        "dateAdded": "2024-08-14",
+        "Details": "Track your fitness goals and monitor your health with this accurate and stylish fitness tracker."
+    },
+    {
+        "productName": "Electric Kettle",
+        "image": "https://i.postimg.cc/YS9j5kT7/717k-DBz-Sa8-L-AC-UF894-1000-QL80.jpg",
+        "brandName": "QuickBoil",
+        "categoryName": "Appliances",
+        "priceRange": "$20 - $50",
+        "price": 29.99,
+        "dateAdded": "2024-08-15",
+        "Details": "Boil water quickly and efficiently with this compact and stylish electric kettle."
+    },
+    {
+        "productName": "Air Purifier",
+        "image": "https://i.postimg.cc/wTwpSJzt/images-2.jpg",
+        "brandName": "FreshAir",
+        "categoryName": "Home",
+        "priceRange": "$100 - $200",
+        "price": 149.99,
+        "dateAdded": "2024-08-16",
+        "Details": "Improve indoor air quality with this advanced air purifier, ideal for removing allergens and pollutants."
+    },
+    {
+        "productName": "Electric Toothbrush",
+        "image": "https://i.postimg.cc/T19625W4/images-3.jpg",
+        "brandName": "SmileBright",
+        "categoryName": "Health",
+        "priceRange": "$30 - $50",
+        "price": 39.99,
+        "dateAdded": "2024-08-17",
+        "Details": "Keep your teeth clean and healthy with this electric toothbrush, featuring multiple brushing modes."
+    },
+    {
+        "productName": "Blender",
+        "image": "https://i.postimg.cc/kG9CdvDS/images-4.jpg",
+        "brandName": "MixMaster",
+        "categoryName": "Appliances",
+        "priceRange": "$50 - $100",
+        "price": 59.99,
+        "dateAdded": "2024-08-18",
+        "Details": "Blend smoothies, soups, and more with this powerful and easy-to-clean blender."
+    },
+    {
+        "productName": "Vacuum Cleaner",
+        "image": "https://i.postimg.cc/gJ3p5Tcd/images-5.jpg",
+        "brandName": "CleanSweep",
+        "categoryName": "Home",
+        "priceRange": "$100 - $200",
+        "price": 129.99,
+        "dateAdded": "2024-08-19",
+        "Details": "Keep your home spotless with this powerful vacuum cleaner, designed for efficient cleaning on all surfaces."
+    },
+    {
+        "productName": "LED TV",
+        "image": "https://i.postimg.cc/5twkMdzP/images-6.jpg",
+        "brandName": "VisionPlus",
+        "categoryName": "Electronics",
+        "priceRange": "$300 - $500",
+        "price": 399.99,
+        "dateAdded": "2024-08-20",
+        "Details": "Enjoy stunning visuals with this LED TV, featuring 4K resolution and smart connectivity for streaming your favorite shows."
+    },
+    {
+        "productName": "Microwave Oven",
+        "image": "https://i.postimg.cc/CxnQmfxp/images-7.jpg",
+        "brandName": "HeatQuick",
+        "categoryName": "Appliances",
+        "priceRange": "$100 - $200",
+        "price": 139.99,
+        "dateAdded": "2024-08-21",
+        "Details": "Prepare meals quickly with this microwave oven, offering multiple cooking settings and easy-to-use controls."
+    },
+    {
+        "productName": "Office Chair",
+        "image": "https://i.postimg.cc/wBJnTRCQ/images-8.jpg",
+        "brandName": "ErgoComfort",
+        "categoryName": "Furniture",
+        "priceRange": "$100 - $200",
+        "price": 119.99,
+        "dateAdded": "2024-08-22",
+        "Details": "Stay comfortable during long work hours with this ergonomic office chair, designed for optimal support and style."
+    },
+    {
+        "productName": "Electric Scooter",
+        "image": "https://i.postimg.cc/4yFW1JC3/images-9.jpg",
+        "brandName": "EcoRide",
+        "categoryName": "Outdoor",
+        "priceRange": "$300 - $500",
+        "price": 449.99,
+        "dateAdded": "2024-08-23",
+        "Details": "Commute with ease on this eco-friendly electric scooter, featuring a long battery life and smooth ride."
+    },
+    {
+        "productName": "Drone",
+        "image": "https://i.postimg.cc/tJgrPsMf/images-10.jpg",
+        "brandName": "SkyView",
+        "categoryName": "Cameras",
+        "priceRange": "$500 - $1000",
+        "price": 899.99,
+        "dateAdded": "2024-08-24",
+        "Details": "Capture breathtaking aerial footage with this high-performance drone, equipped with a 4K camera and GPS."
+    },
+    {
+        "productName": "Smart Thermostat",
+        "image": "https://i.postimg.cc/NMDJ56pm/NUd7ba-DT7-Ky2-TKi-Ak-Qn-Uv7.jpg",
+        "brandName": "EcoTemp",
+        "categoryName": "Home",
+        "priceRange": "$100 - $200",
+        "price": 129.99,
+        "dateAdded": "2024-08-25",
+        "Details": "Control your home's temperature remotely with this smart thermostat, designed for energy efficiency and convenience."
+    },
+    {
+        "productName": "Wireless Router",
+        "image": "https://i.postimg.cc/wx0Nbf1D/images-3.jpg",
+        "brandName": "NetFast",
+        "categoryName": "Networking",
+        "priceRange": "$50 - $100",
+        "price": 79.99,
+        "dateAdded": "2024-08-26",
+        "Details": "Enjoy fast and reliable internet with this wireless router, featuring advanced security and easy setup."
+    },
+    {
+        "productName": "Action Camera",
+        "image": "https://i.postimg.cc/J40XwNXv/befunky-collage-1.jpg",
+        "brandName": "AdventureCam",
+        "categoryName": "Cameras",
+        "priceRange": "$100 - $200",
+        "price": 179.99,
+        "dateAdded": "2024-08-27",
+        "Details": "Capture every moment of your adventures with this action camera, offering waterproof and durable design."
+    },
+    {
+        "productName": "Robot Vacuum",
+        "image": "https://i.postimg.cc/T17WLwzt/61-Zp-Czt-YTCS-AC-SL1500.jpg",
+        "brandName": "CleanBot",
+        "categoryName": "Home",
+        "priceRange": "$200 - $400",
+        "price": 299.99,
+        "dateAdded": "2024-08-28",
+        "Details": "Automate your cleaning routine with this robot vacuum, featuring smart navigation and powerful suction."
+    },
+    {
+        "productName": "Electric Shaver",
+        "image": "https://i.postimg.cc/7hY2Z7WC/images-5.jpg",
+        "brandName": "SmoothShave",
+        "categoryName": "Health",
+        "priceRange": "$50 - $100",
+        "price": 69.99,
+        "dateAdded": "2024-08-29",
+        "Details": "Achieve a close and comfortable shave with this electric shaver, designed for precision and convenience."
+    },
+    {
+        "productName": "Wireless Earbuds",
+        "image": "https://i.postimg.cc/j5hfTvZ0/anker-soundbuds-curve-wireless-headphones-2.jpg",
+        "brandName": "SoundBuds",
+        "categoryName": "Electronics",
+        "priceRange": "$50 - $100",
+        "price": 89.99,
+        "dateAdded": "2024-08-30",
+        "Details": "Listen to your favorite music on the go with these wireless earbuds, offering high-quality sound and a comfortable fit."
+    },
+    {
+        "productName": "Portable Charger",
+        "image": "https://i.postimg.cc/PqYZ3dDq/81-Mi-YNnp-Jk-L-AC-SL1500.jpg",
+        "brandName": "PowerBank",
+        "categoryName": "Accessories",
+        "priceRange": "$20 - $50",
+        "price": 29.99,
+        "dateAdded": "2024-08-31",
+        "Details": "Keep your devices charged on the go with this portable charger, featuring fast charging and compact design."
+    },
+    {
+        "productName": "Electric Pressure Cooker",
+        "image": "https://i.postimg.cc/W1D0ZGbg/pressure-cooker-2048px-9805.jpg",
+        "brandName": "QuickCook",
+        "categoryName": "Appliances",
+        "priceRange": "$50 - $100",
+        "price": 79.99,
+        "dateAdded": "2024-09-01",
+        "Details": "Cook meals quickly and easily with this electric pressure cooker, offering multiple cooking modes and a large capacity."
+    },
+    {
+        "productName": "Smart Lock",
+        "image": "https://i.postimg.cc/2jwdNjKb/images-6.jpg",
+        "brandName": "SecureHome",
+        "categoryName": "Home",
+        "priceRange": "$100 - $200",
+        "price": 149.99,
+        "dateAdded": "2024-09-02",
+        "Details": "Enhance your home security with this smart lock, allowing you to control access remotely and securely."
+    },
+    {
+        "productName": "LED Desk Lamp",
+        "image": "https://i.postimg.cc/BbM2TNKc/images-7.jpg",
+        "brandName": "BrightLight",
+        "categoryName": "Furniture",
+        "priceRange": "$20 - $50",
+        "price": 39.99,
+        "dateAdded": "2024-09-03",
+        "Details": "Illuminate your workspace with this LED desk lamp, offering adjustable brightness and a sleek design."
+    },
+    {
+        "productName": "Gaming Console",
+        "image": "https://i.postimg.cc/kgZFYjhT/images-8.jpg",
+        "brandName": "PlayPro",
+        "categoryName": "Gaming",
+        "priceRange": "$300 - $500",
+        "price": 499.99,
+        "dateAdded": "2024-09-04",
+        "Details": "Enjoy immersive gaming experiences with this gaming console, featuring high performance and a vast library of games."
+    },
+    {
+        "productName": "Electric Drill",
+        "image": "https://i.postimg.cc/8zsmH8wF/hq720.jpg",
+        "brandName": "ToolMaster",
+        "categoryName": "Tools",
+        "priceRange": "$50 - $100",
+        "price": 59.99,
+        "dateAdded": "2024-09-05",
+        "Details": "Complete your DIY projects with this electric drill, offering variable speed and a comfortable grip."
+    },
+    {
+        "productName": "Smart Light Bulb",
+        "image": "https://i.postimg.cc/5NsmL95d/images-9.jpg",
+        "brandName": "LightSmart",
+        "categoryName": "Home",
+        "priceRange": "$20 - $50",
+        "price": 29.99,
+        "dateAdded": "2024-09-06",
+        "Details": "Control your lighting with this smart light bulb, featuring voice control and customizable brightness settings."
+    },
+    {
+        "productName": "Dune",
+        "image": "https://i.postimg.cc/TP6xW5zQ/44767458.jpg",
+        "brandName": "Dune Book",
+        "categoryName": "Books",
+        "priceRange": "$20 - $50",
+        "price": 39.99,
+        "dateAdded": "2024-09-07",
+        "Details": "Stay fascinated with this science-fiction book, offering a quite thrilling enjoyment."
+    },
+
+    {
+        "productName": "Camera",
+        "image": "https://i.postimg.cc/zf0QXL8y/4wp-Kr-H93-D37d-DPTisdq-Gy4.jpg",
+        "brandName": "FWs Cameras",
+        "categoryName": "Cameras",
+        "priceRange": "$50 - $100",
+        "price": 59.99,
+        "dateAdded": "2024-09-05",
+        "Details": "Best camera for HD photo and video , offering variable functions and a comfortable grip."
+    },
+    {
+        "productName": "Male Shirt",
+        "image": "https://i.postimg.cc/qR6WbJHg/images-10.jpg",
+        "brandName": "Yenw Clothing",
+        "categoryName": "Clothing",
+        "priceRange": "$20 - $50",
+        "price": 29.99,
+        "dateAdded": "2024-09-06",
+        "Details": "Make yourself smart looking, featuring a good quality clothing and brightness color ."
+    },
+    {
+        "productName": "Electric Fan",
+        "image": "https://i.postimg.cc/WzRyRNWf/51-Mc-Mt2-EL-AC-UF894-1000-QL80.jpg",
+        "brandName": "CoolBreeze",
+        "categoryName": "Appliances",
+        "priceRange": "$20 - $50",
+        "price": 39.99,
+        "dateAdded": "2024-09-07",
+        "Details": "Stay cool during hot days with this electric fan, offering adjustable speed settings and quiet operation."
+    }
+]

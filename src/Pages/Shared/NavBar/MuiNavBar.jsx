@@ -1,248 +1,86 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu as MenuIcon } from "@mui/icons-material";
-import {
-    AppBar,
-    IconButton,
-    Stack,
-    Toolbar,
-    Typography,
-    Drawer,
-    List,
-    ListItem,
-    ListItemText,
-    Hidden,
-} from "@mui/material";
-
-// import logo from "../../../../public/mm.png";
-import logo from "../../../../src/assets/mm.png";
-import { useContext } from "react";
-import useAdmin from "../../../hooks/useAdmin";
 import { AuthContext } from "../../providers/AuthProvider";
+import useAdmin from "../../../hooks/useAdmin";
+import logo from "../../../../src/assets/lg.png";
 
 const MuiNavBar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const navigate = useNavigate();
-    const isLoggedIn = true; // Replace with your actual login state
     const { user, logOut } = useContext(AuthContext);
     const [isAdmin] = useAdmin();
-
-    const toggleDrawer = (open) => (event) => {
-        if (
-            event.type === "keydown" &&
-            (event.key === "Tab" || event.key === "Shift")
-        ) {
-            return;
-        }
-        setIsDrawerOpen(open);
-    };
-
-    const menuItems = [
-        { text: "Home", link: "/" },
-        { text: "Biodatas", link: "/biodatas" },
-        { text: "About Us", link: "/aboutUs" },
-        { text: "Contact Us", link: "/contactUs" },
-        // { text: "Login", link: "/login" },
-    ];
-
-    const handleAdminDashboardClick = () => {
-        navigate("/dashboard/adminHome");
-    };
-
-    const handleUserDashboardClick = () => {
-        navigate("/dashboard/userHome");
-    };
-
-    const handleLogInClick = () => {
-        navigate("/login");
-    };
 
     const handleLogOutClick = () => {
         logOut()
             .then(() => { })
-            .catch(error => console.log(error))
+            .catch(error => console.log(error));
     };
 
     return (
-        <div className="max-w-screen-xl">
-            {/* <AppBar position="static"> */}
-            <AppBar position="fixed">
-                <Toolbar>
-                    <Hidden smUp>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    </Hidden>
-                    <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-                        <img src={logo} alt="Logo" style={{ height: 40, marginRight: 10 }} />
-                        <Typography variant="h6" component="div" sx={{ color: "white" }}>
-                            Matrimony Mate
-                        </Typography>
-                    </Link>
-                    <div style={{ flexGrow: 1 }} />
-                    <Hidden smDown>
-                        <Stack direction="row" spacing={2}>
-                            {menuItems.map((item) => (
-                                <Link to={item.link} key={item.text} style={{ textDecoration: "none", color: "inherit" }}>
-                                    {item.text}
-                                </Link>
-                            ))}
-                            {/* {isLoggedIn && (
-                                <Typography
-                                    variant="body1"
-                                    component="div"
-                                    onClick={handleDashboardClick}
-                                    style={{ cursor: "pointer", color: "inherit" }}
-                                >
-                                    Dashboard
-                                </Typography>
-                            )} */}
-                            {
-                                user && isAdmin &&
-                                // <li>
-                                //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                                // </li>
+        <div className="navbar bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg fixed top-0 w-full z-50">
+        {/* <div className="navbar bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg fixed top-0 w-full z-50"> */}
+            <div className="container mx-auto flex justify-between items-center">
+                {/* Logo */}
+                <Link to="/" className="flex items-center">
+                    <img src={logo} alt="Logo" className="bg-yellow-400 rounded-3xl h-16" />
+                    <span className="ml-2 text-xl text-white font-bold">Shop Ease</span>
+                </Link>
 
-                                <Typography
-                                    variant="body1"
-                                    component="div"
-                                    onClick={handleAdminDashboardClick}
-                                    style={{ cursor: "pointer", color: "inherit" }}
-                                >
-                                    Dashboard
-                                </Typography>
-                            }
-
-                            {
-                                user && !isAdmin &&
-                                // <li>
-                                //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                                // </li>
-
-                                <Typography
-                                    variant="body1"
-                                    component="div"
-                                    onClick={handleUserDashboardClick}
-                                    style={{ cursor: "pointer", color: "inherit" }}
-                                >
-                                    Dashboard
-                                </Typography>
-                            }
-
-                            {
-                                user ?
-                                    // <li>
-                                    //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                                    // </li>
-
-                                    <Typography
-                                        variant="body1"
-                                        component="div"
-                                        onClick={handleLogOutClick}
-                                        style={{ cursor: "pointer", color: "inherit" }}
-                                    >
-                                        Log Out
-                                    </Typography> :
-                                    <>
-                                        <Typography
-                                            variant="body1"
-                                            component="div"
-                                            onClick={handleLogInClick}
-                                            style={{ cursor: "pointer", color: "inherit" }}
-                                        >
-                                            Login
-                                        </Typography>
-                                    </>
-                            }
-                        </Stack>
-                    </Hidden>
-                </Toolbar>
-            </AppBar>
-            <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
-                <List>
-                    {menuItems.map((item) => (
-                        <ListItem button key={item.text} component={Link} to={item.link} onClick={toggleDrawer(false)}>
-                            <ListItemText primary={item.text} />
-                        </ListItem>
-                    ))}
-                    {/* {isLoggedIn && (
-                        <ListItem button onClick={handleDashboardClick}>
-                            <ListItemText primary="Dashboard" />
-                        </ListItem>
-                    )} */}
-                    {/* {
-                        user && isAdmin && <li><Link to="/dashboard/adminHome">Dashboard</Link></li>
-                    } */}
+                {/* Desktop Menu */}
+                <div className="hidden md:flex space-x-4">
+                    <Link to="/" className="btn btn-ghost bg-orange-500 normal-case text-lg">Home</Link>
+                    {/* Add other menu items here */}
                     {
-                        user && isAdmin &&
-                        // <li>
-                        //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                        // </li>
-
-                        <Typography
-                            className="text-center mt-3"
-                            variant="body1"
-                            component="div"
-                            onClick={handleAdminDashboardClick}
-                            style={{ cursor: "pointer", color: "inherit" }}
-                        >
-                            Dashboard
-                        </Typography>
-                    }
-
-                    {
-                        user && !isAdmin &&
-                        // <li>
-                        //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                        // </li>
-
-                        <Typography
-                            variant="body1"
-                            component="div"
-                            onClick={handleUserDashboardClick}
-                            style={{ cursor: "pointer", color: "inherit" }}
-                        >
-                            Dashboard
-                        </Typography>
-                    }
-
-                    {
-                        user ?
-                            // <li>
-                            //     <Link to="/dashboard/adminHome">Dashboard</Link>
-                            // </li>
-
-                            <Typography
-                                className="text-center mt-3"
-                                variant="body1"
-                                component="div"
-                                onClick={handleLogOutClick}
-                                style={{ cursor: "pointer", color: "inherit" }}
-                            >
+                        user ? (
+                            <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-500 normal-case text-lg">
                                 Log Out
-                            </Typography> :
-                            <>
-                                <Typography
-                                    className="text-center mt-3"
-                                    variant="body1"
-                                    component="div"
-                                    onClick={handleLogInClick}
-                                    style={{ cursor: "pointer", color: "inherit" }}
-                                >
-                                    Login
-                                </Typography>
-                            </>
+                            </button>
+                        ) : (
+                            <button onClick={() => navigate("/login")} className="btn btn-ghost normal-case text-lg">
+                                Login
+                            </button>
+                        )
                     }
-                </List>
-            </Drawer>
+                </div>
+
+                {/* Mobile Menu */}
+                <div className="md:hidden">
+                    <button
+                        className="btn btn-ghost"
+                        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Drawer */}
+            {isDrawerOpen && (
+                <div className="md:hidden bg-base-100 p-4 absolute top-16 left-0 w-full shadow-lg">
+                    <ul className="menu p-2 shadow bg-base-100 rounded-box w-full">
+                        <li><Link to="/" onClick={() => setIsDrawerOpen(false)}>Home</Link></li>
+                        {/* Add other menu items here */}
+                        {
+                            user ? (
+                                <li>
+                                    <button onClick={handleLogOutClick} className="btn btn-ghost normal-case text-lg">
+                                        Log Out
+                                    </button>
+                                </li>
+                            ) : (
+                                <li>
+                                    <button onClick={() => navigate("/login")} className="btn btn-ghost normal-case text-lg">
+                                        Login
+                                    </button>
+                                </li>
+                            )
+                        }
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };
 
+// export default DaisyNavBar;
 export default MuiNavBar;

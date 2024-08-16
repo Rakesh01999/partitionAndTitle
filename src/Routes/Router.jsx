@@ -43,15 +43,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
-            },
-            {
-                path: '/menu',
-                element: <Menu></Menu>
-            }, 
-            {
-                path: '/order/:category',
-                element: <Order></Order>
+                // element: <Home></Home>
+                element: <PrivateRoute><Home></Home></PrivateRoute>
             },
             {
                 path: '/login',
@@ -62,30 +55,30 @@ export const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/biodatas',
-                element: <Biodatas></Biodatas>
+                // path: '/biodatas',
+                // element: <Biodatas></Biodatas>
             },
             {
-                path: '/biodatas/:id',
-                element: <PrivateRoute><BiodataDetails></BiodataDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/biodatas/${params.id}`)  
-            },
-            {
-                path: '/premiumRequests/:id',
-                element: <PrivateRoute><PremiumProfileDetails></PremiumProfileDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/premiumRequests/${params.id}`)  
-            },
-            {
-                path: '/payment/:id',
-                element: <Payment></Payment>,
+                // path: '/biodatas/:id',
+                // element: <PrivateRoute><BiodataDetails></BiodataDetails></PrivateRoute>,
                 // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/biodatas/${params.id}`)  
-                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/payment/${params.id}`)  
             },
             {
-                path: '/checkOut/:id',
+                // path: '/premiumRequests/:id',
+                // element: <PrivateRoute><PremiumProfileDetails></PremiumProfileDetails></PrivateRoute>,
+                // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/premiumRequests/${params.id}`)  
+            },
+            {
+                // path: '/payment/:id',
+                // element: <Payment></Payment>,
+                // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/biodatas/${params.id}`)  
+                // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/payment/${params.id}`)  
+            },
+            {
+                // path: '/checkOut/:id',
                 // element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                element: <CheckOut></CheckOut>,
-                loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/checkOut/${params.id}`)  
+                // element: <CheckOut></CheckOut>,
+                // loader: ({params}) => fetch(`https://matrimony-server-chi.vercel.app/checkOut/${params.id}`)  
             },
             {
                 path: '/aboutUs',

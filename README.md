@@ -1,15 +1,9 @@
-# Matrimony Mate
+# Shop Ease
 
-**Live Site:** [Matrimony Mate](https://matrimony-mate.web.app/)
-
-## Admin Credentials
-
-- **Email:** akashdev@gmail.com
-- **Password:** Akashdev1!
+**Live Site:** [Shop Ease]
 
 ## Overview
 
-Matrimony Mate is an advanced matrimonial platform designed to bring people together and help them find their perfect match. Our goal is to create a secure and user-friendly environment where individuals can explore potential matches and build meaningful relationships leading to happy and successful marriages.
 
 ## Features
 
@@ -33,13 +27,13 @@ Matrimony Mate is an advanced matrimonial platform designed to bring people toge
 
 10. **Premium Features**: Access exclusive features and benefits by upgrading to a premium membership, including highlighted profiles and priority support.
 
+
 ## How to Use
 
 1. **Sign Up**: Create an account by providing basic details and verifying your email address.
 2. **Complete Profile**: Fill out your profile with detailed information to increase your chances of finding a compatible match.
 3. **Search for Matches**: Use advanced search filters to find potential matches based on your preferences.
 4. **Contact Matches**: Send and receive messages securely within the platform.
-5. **Admin Dashboard**: Admin can log in using the provided credentials to monitor site activities, manage users, and track revenue.
 
 ## Contact
 

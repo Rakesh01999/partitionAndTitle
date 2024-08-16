@@ -9,17 +9,23 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import SuccessCounter from "../SuccessCounter/SuccessCounter";
 import SuccessStory from "../SuccessStory/SuccessStory";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Biodatas from "../../Biodatas/Biodatas";
+import Products from "../Products/Products";
+
 const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Matrimony Mate | Home</title>
+                <title>Shop Ease | Home</title>
             </Helmet>
             <Banner></Banner>
-            <PremiumMemberProfile></PremiumMemberProfile>
-            <HowItWorks></HowItWorks>
-            <SuccessCounter></SuccessCounter>
-            <SuccessStory></SuccessStory>
+            <Products></Products>
+            {/* <PremiumMemberProfile></PremiumMemberProfile> */}
+            {/* <HowItWorks></HowItWorks> */}
+            {/* <SuccessCounter></SuccessCounter> */}
+            {/* <SuccessStory></SuccessStory> */}
             {/* <Category></Category> */}
             {/* <PopularMenu></PopularMenu> */}
             {/* <Featured></Featured> */}

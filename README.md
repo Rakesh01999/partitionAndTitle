@@ -7,33 +7,31 @@
 
 ## Features
 
-1. **User-Friendly Interface**: Our platform is designed with ease of use in mind, ensuring that users can navigate effortlessly through the site.
+1. **Robust Authentication**:
+* Multiple Login Options: Supports email/password and Google sign-in for a flexible user experience.
+* Strong Password Validation: Enforces secure passwords with real-time validation feedback.   
+2. **Modern UI/UX**:
+* Custom Theming: Consistent orange-themed design with responsive layout for all devices.
+* Interactive Animations: Engaging user interactions with SweetAlert2, react-toastify, and subtle animations.
    
-2. **Advanced Search Filters**: Users can filter potential matches based on various criteria such as age, location, religion, and more to find the most compatible matches.
+3. **Enhanced Security**:
+* JWT Authentication: Secure session management with JSON Web Tokens.
+* Firebase Integration: Reliable user authentication and real-time data handling.
+
+4. **Optimized Performance**:
+* Lazy Loading: Efficient loading for faster performance.
+* Material UI: Clean, minimalist design focused on speed and aesthetics.
    
-3. **Profile Verification**: Ensuring the authenticity of users through a robust profile verification process to maintain a secure environment.
-   
-4. **Privacy Controls**: Users have full control over their profiles, including the ability to hide personal information and control who can view their details.
-   
-5. **Biodata Statistics**: Detailed statistics for admin to monitor the number of male, female, and premium users, as well as the total biodata count.
-   
-6. **Revenue Tracking**: Admin can track total revenue generated from biodata contact request payments directly from the dashboard.
+5. **Accessible Design**:
+* Keyboard Navigation: Fully navigable using the keyboard.
+* Screen Reader Friendly: Compatible with screen readers for inclusive access.
+
+6. **Seamless Backend Integration**:
+* Admin can track total revenue generated from biodata contact request payments   directly from the dashboard.
    
 7. **Mobile Responsive**: The site is fully responsive, providing a seamless experience across all devices including desktops, tablets, and smartphones.
-   
-8. **Regular Updates**: Continuous improvements and updates to the platform based on user feedback to enhance functionality and user experience.
-   
-9. **Payment System**: Users can make payments for contact requests, ensuring a secure and efficient transaction process.
-
-10. **Premium Features**: Access exclusive features and benefits by upgrading to a premium membership, including highlighted profiles and priority support.
 
 
-## How to Use
-
-1. **Sign Up**: Create an account by providing basic details and verifying your email address.
-2. **Complete Profile**: Fill out your profile with detailed information to increase your chances of finding a compatible match.
-3. **Search for Matches**: Use advanced search filters to find potential matches based on your preferences.
-4. **Contact Matches**: Send and receive messages securely within the platform.
 
 ## Contact
 

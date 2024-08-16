@@ -30,7 +30,8 @@ const Products = () => {
 
     // ---------- claude 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        // fetch('http://localhost:5000/products')
+        fetch('https://shopease-server-mauve.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -110,7 +111,7 @@ const Products = () => {
         setCurrentPage(1);
     };
 
-    
+
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);

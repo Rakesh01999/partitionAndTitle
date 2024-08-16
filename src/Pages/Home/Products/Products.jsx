@@ -110,6 +110,7 @@ const Products = () => {
         setCurrentPage(1);
     };
 
+    
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);

@@ -39,4 +39,4 @@
 
 For any support or inquiries, please contact at rbiswas01999@gmail.com.
 
-We hope you find your perfect match with Matrimony Mate!
+We hope you find your perfect match with Shop Ease !

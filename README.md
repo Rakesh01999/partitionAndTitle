@@ -1,6 +1,6 @@
 # Shop Ease
 
-**Live Site:** [Shop Ease]
+**Live Site:** [Shop Ease](https://shopease-j.web.app/)
 
 ## Overview
 

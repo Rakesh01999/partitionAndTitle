@@ -6,9 +6,11 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [brands, setBrands] = useState([]);
 
     const [filters, setFilters] = useState({
         category: '',
+        brandName: '',
         priceRange: { min: 0, max: 1000 },
         sortBy: ''
     });
@@ -16,12 +18,26 @@ const Products = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage] = useState(6);
 
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/products')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data);
+    //             setFilteredProducts(data);
+    //             setLoading(false);
+    //         });
+    // }, []);
+
+    // ---------- claude 
     useEffect(() => {
         fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
                 setFilteredProducts(data);
+                // Extract unique brand names
+                const uniqueBrands = [...new Set(data.map(product => product.brandName))];
+                setBrands(uniqueBrands);
                 setLoading(false);
             });
     }, []);
@@ -44,6 +60,10 @@ const Products = () => {
 
         if (filters.category) {
             filtered = filtered.filter(product => product.categoryName === filters.category);
+        }
+
+        if (filters.brand) {
+            filtered = filtered.filter(product => product.brandName === filters.brand);
         }
 
         filtered = filtered.filter(product =>
@@ -82,6 +102,7 @@ const Products = () => {
         setFilteredProducts(products);
         setFilters({
             category: '',
+            brand:'',
             priceRange: { min: 0, max: 1000 },
             sortBy: ''
         });
@@ -103,6 +124,7 @@ const Products = () => {
 
     return (
         <div className="container mx-auto px-4">
+            
             <SectionTitle subHeading="Find Here" heading="All Products" />
 
 
@@ -154,6 +176,24 @@ const Products = () => {
                         <option value="Outdoor">Outdoor</option>
                     </select>
                 </div>
+
+                {/* -------Brand Name FIlter--------- */}
+                  {/* Brand Filter */}
+                <div className="w-full sm:w-1/4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">Brand</label>
+                    <select
+                        name="brand"
+                        value={filters.brand}
+                        onChange={handleFilterChange}
+                        className="select select-bordered w-full px-4 py-2 rounded-lg border border-gray-300"
+                    >
+                        <option value="">All Brands</option>
+                        {brands.map((brand, index) => (
+                            <option key={index} value={brand}>{brand}</option>
+                        ))}
+                    </select>
+                </div>
+
 
                 {/* Price Range Filter */}
                 <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-1/3">

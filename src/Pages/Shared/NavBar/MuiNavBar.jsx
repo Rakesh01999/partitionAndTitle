@@ -59,18 +59,18 @@ const MuiNavBar = () => {
         isDrawerOpen && (
             <div className="md:hidden bg-base-100 p-4 absolute top-16 left-0 w-full shadow-lg">
                 <ul className="menu p-2 shadow bg-base-100 rounded-box w-full">
-                    <li><Link to="/" onClick={() => setIsDrawerOpen(false)}>Home</Link></li>
+                    <li><Link className="bg-yellow-400 mb-4" to="/" onClick={() => setIsDrawerOpen(false)}>Home</Link></li>
                     {/* Add other menu items here */}
                     {
                         user ? (
                             <li>
-                                <button onClick={handleLogOutClick} className="btn btn-ghost normal-case text-lg">
+                                <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-400 normal-case text-lg">
                                     Log Out
                                 </button>
                             </li>
                         ) : (
                             <li>
-                                <button onClick={() => navigate("/login")} className="btn btn-ghost normal-case text-lg">
+                                <button onClick={() => navigate("/login")} className="btn btn-ghost bg-orange-400 normal-case text-lg">
                                     Login
                                 </button>
                             </li>

@@ -103,7 +103,7 @@ const Products = () => {
         setFilteredProducts(products);
         setFilters({
             category: '',
-            brand:'',
+            brand: '',
             priceRange: { min: 0, max: 1000 },
             sortBy: ''
         });
@@ -126,7 +126,7 @@ const Products = () => {
 
     return (
         <div className="container mx-auto px-4">
-            
+
             <SectionTitle subHeading="Find Here" heading="All Products" />
 
 
@@ -180,7 +180,7 @@ const Products = () => {
                 </div>
 
                 {/* -------Brand Name FIlter--------- */}
-                  {/* Brand Filter */}
+                {/* Brand Filter */}
                 <div className="w-full sm:w-1/4">
                     <label className="block text-gray-700 text-sm font-bold mb-2">Brand</label>
                     <select
@@ -283,7 +283,7 @@ const Products = () => {
             )}
 
             {/* Pagination */}
-            <div className="my-8 flex justify-center items-center">
+            {/* <div className="my-8 flex justify-center items-center">
                 <Pagination
                     count={Math.ceil(filteredProducts.length / itemsPerPage)}
                     page={currentPage}
@@ -296,7 +296,33 @@ const Products = () => {
                         />
                     )}
                 />
+            </div> */}
+
+            <div className="my-8 flex justify-center items-center">
+                <Pagination
+                    count={Math.ceil(filteredProducts.length / itemsPerPage)}
+                    page={currentPage}
+                    onChange={handlePageChange}
+                    color="primary"
+                    renderItem={(item) => (
+                        <PaginationItem
+                            {...item}
+                            sx={{
+                                '&.Mui-selected': {
+                                    backgroundColor: 'orange', // Set the selected background color to orange
+                                    color: 'white', // Set the selected text color to white
+                                    fontWeight: 'bold', // Make the selected item bold
+                                },
+                                '&.Mui-selected:hover': {
+                                    backgroundColor: 'darkorange', // Set a darker shade of orange on hover
+                                },
+                            }}
+                            className={`page-item ${item.selected ? 'font-bold' : ''}`}
+                        />
+                    )}
+                />
             </div>
+
         </div>
     );
 };

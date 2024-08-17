@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="bg-gray-800 text-white p-9">
             <div className="container mx-auto">
-                <Grid container spacing={4} className="text-center">
+                <Grid container spacing={4} className="">
                     <Grid item xs={12} sm={6} md={3} >
                         <Typography variant="h6"  gutterBottom className="text-orange-200">
                             About Us

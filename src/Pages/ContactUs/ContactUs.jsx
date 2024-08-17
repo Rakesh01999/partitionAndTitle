@@ -50,7 +50,22 @@ const ContactUs = () => {
                             <TextField label="Email" variant="outlined" fullWidth required />
                             <TextField label="Message" variant="outlined" multiline rows={4} fullWidth required />
                             {/* <Button variant="contained" color="primary">Send Message</Button> */}
-                            <Button variant="contained" color="primary">Send Message</Button>
+
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                fullWidth
+                                className="h-11 mb-4"
+                                sx={{
+                                    backgroundColor: 'orange', // Sets the background color to orange
+                                    '&:hover': {
+                                        backgroundColor: 'darkorange', // Sets the hover color to a darker shade of orange
+                                    },
+                                }}
+                            >
+                                <span className="text-lg text-black">Send Message</span>
+                            </Button>
+
                         </form>
                     </CardContent>
                 </div>

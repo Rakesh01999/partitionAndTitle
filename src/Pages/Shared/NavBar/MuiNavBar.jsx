@@ -23,16 +23,16 @@ const MuiNavBar = () => {
                 {/* Logo */}
                 <Link to="/" className="flex items-center">
                     <img src={logo} alt="Logo" className="bg-yellow-400 rounded-3xl h-16" />
-                    <span className="ml-2 text-xl text-white font-bold">Shop Ease</span>
+                    <span className="ml-2 text-xl md:text-3xl text-white font-bold">Shop Ease</span>
                 </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-4">
-                    <Link to="/" className="btn btn-ghost bg-orange-500 normal-case text-lg">Home</Link>
+                    <Link to="/" className="btn btn-ghost bg-orange-500 text-white normal-case text-lg">Home</Link>
                     {/* Add other menu items here */}
                     {
                         user ? (
-                            <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-500 normal-case text-lg">
+                            <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-500 text-white normal-case text-lg">
                                 Log Out
                             </button>
                         ) : (

@@ -9,7 +9,7 @@ const AboutUs = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center items-center bg-white p-4 mt-16">
             <Helmet>
-                <title>Matrimony Mate | About Us</title>
+                <title>Shop Ease | About Us</title>
             </Helmet>
             <div data-aos="zoom-out-down">
                 <Typography variant="h4" className="mb-10 text-center text-blue-500">About Us</Typography>

@@ -39,3 +39,60 @@ The primary purpose of this site is to provide users with a seamless and efficie
 
 For any support or inquiries, please contact at rbiswas01999@gmail.com.
 
+
+## Instructions ( project setup, instructions, and any necessary details for running the project locally. )
+
+Here’s a comprehensive guide for setting up the project locally, which includes the frontend repositories' README file:
+
+---
+
+## 🛠 Project Setup Guide
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+
+- **Node.js** (v14.x or higher)
+- **npm** (v6.x or higher) or **Yarn**
+- **MongoDB** (for backend)
+
+### 🚀 Getting Started
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/username/project-name.git
+cd project-name
+```
+
+### 🔧 Frontend Setup
+
+1. **Navigate to the frontend directory:**
+
+   ```bash
+   cd frontend
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   # or if using yarn
+   yarn install
+   ```
+
+3. **Create a `.env` file:**
+
+   - Inside the `frontend` directory, create a `.env` file and add your environment variables (e.g., Firebase config).
+
+4. **Run the Development Server:**
+
+   ```bash
+   npm start
+   # or if using yarn
+   yarn start
+   ```
+
+5. **Access the Application:**
+
+   - Open your browser and navigate to `http://localhost:3000`.

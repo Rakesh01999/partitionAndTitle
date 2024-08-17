@@ -12,7 +12,7 @@ const AboutUs = () => {
                 <title>Shop Ease | About Us</title>
             </Helmet>
             <div data-aos="zoom-out-down">
-                <Typography variant="h4" className="mb-10 text-center text-blue-500">About Us</Typography>
+                <Typography variant="h4" className="mb-10 text-center text-orange-500">About Us</Typography>
             </div>
             {/* <Card className="max-w-lg w-full"> */}
             <Card className='mt-4'>
@@ -23,7 +23,7 @@ const AboutUs = () => {
                             <Typography variant="h5" className="mb-4 text-center">Who We Are</Typography>
                         </span>
                         <Typography variant="body1" className="mb-4">
-                            We are a dedicated team of professionals passionate about bringing people together. With years of experience in the matchmaking industry, we strive to provide a trusted platform where individuals can find meaningful connections and lifelong partners.
+                            We are a passionate team of developers and tech enthusiasts dedicated to creating innovative web solutions that enhance user experiences and simplify complex processes. With a focus on quality and functionality, we strive to deliver top-notch digital products that meet the evolving needs of our users.
                         </Typography>
                     </CardContent>
                 </div>
@@ -34,11 +34,11 @@ const AboutUs = () => {
                             <Typography variant="h5" className="mb-4 text-center">Our Mission</Typography>
                         </span>
                         <Typography variant="body1" className="mb-4">
-                            Our mission is to create a secure and user-friendly environment where individuals can explore potential matches and build meaningful relationships. We aim to facilitate connections that lead to happy and successful marriages. Our commitment is to help you find your perfect match with ease and confidence.
+                        Our mission is to empower individuals and businesses by providing intuitive, reliable, and scalable web applications. We aim to bridge the gap between technology and usability, ensuring our solutions are accessible and valuable to all.
                         </Typography>
                     </CardContent>
                 </div>
-                <div data-aos="zoom-out-down">
+                {/* <div data-aos="zoom-out-down">
                     <CardContent className="hover:shadow-2xl transition duration-300 ease-in-out p-4 hover:bg-white" sx={{ backgroundColor: 'ButtonHighlight' }}>
                         <span className='flex items-center justify-center gap-2'>
                             <GiTeamIdea className='text-xl' />
@@ -52,7 +52,7 @@ const AboutUs = () => {
                             <Typography variant="body1" className="ml-2">Meet our dedicated team</Typography>
                         </div>
                     </CardContent>
-                </div>
+                </div> */}
             </Card>
         </div>
     );

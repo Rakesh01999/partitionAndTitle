@@ -1,88 +1,72 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
-import useAdmin from "../../../hooks/useAdmin";
+import React, { useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import logo from "../../../../src/assets/lg.png";
+import { Link } from "react-scroll";
 
 const MuiNavBar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const navigate = useNavigate();
-    const { user, logOut } = useContext(AuthContext);
-    const [isAdmin] = useAdmin();
-
-    const handleLogOutClick = () => {
-        logOut()
-            .then(() => { })
-            .catch(error => console.log(error));
-    };
 
     return (
         <div className="navbar bg-gradient-to-r from-purple-500 to-pink-300 shadow-lg fixed top-0 w-full z-50 max-w-screen-xl mx-auto">
-            
             <div className="container mx-auto flex justify-between items-center">
-            {/* Logo */}
-            <Link to="/" className="flex items-center">
-                {/* <img src={logo} alt="Logo" className="bg-yellow-400 rounded-3xl h-16" /> */}
-                <span className="ml-2 text-xl md:text-3xl text-white font-bold">Recursive Partitioning & Title Interaction</span>
-            </Link>
+                {/* Logo and Site Name */}
+                <Link to="/" className="flex items-center">
+                    <span className="ml-2 text-xl md:text-3xl text-white font-bold">Recursive Partitioning & Title Interaction</span>
+                </Link>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-4">
-                <Link to="/" className="btn btn-ghost bg-orange-500 text-white normal-case text-lg">Home</Link>
-                {/* Add other menu items here */}
-                {
-                    user ? (
-                        <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-500 text-white normal-case text-lg">
-                            Log Out
-                        </button>
-                    ) : (
-                        <button onClick={() => navigate("/login")} className="btn btn-ghost normal-case text-lg">
-                            Login
-                        </button>
-                    )
-                }
+                {/* Desktop Menu */}
+                <div className="hidden md:flex space-x-4">
+                    <Link to="partitioning" smooth={true} duration={500} offset={-170} className="btn btn-ghost bg-purple-500 text-white normal-case text-lg">
+                        Partitioning
+                    </Link>
+                    <Link to="alphabet"  smooth={true} duration={500} offset={-170} className="btn btn-ghost bg-purple-500 text-white normal-case text-lg">
+                        Alphabet
+                    </Link>
+                </div>
+
+                {/* Mobile Menu */}
+                <div className="md:hidden">
+                    <button
+                        className="btn btn-ghost"
+                        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
-            {/* Mobile Menu */}
-            <div className="md:hidden">
-                <button
-                    className="btn btn-ghost"
-                    onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
+            {/* Mobile Drawer */}
+            {isDrawerOpen && (
+                <div className="md:hidden bg-base-100 p-4 absolute top-16 left-0 w-full shadow-lg">
+                    <ul className="menu p-2 shadow bg-base-100 rounded-box w-full">
+                        <li>
+                            <Link
+                                className="btn btn-ghost bg-purple-500 text-white normal-case text-lg"
+                                to="partitioning"
+                                smooth={true} duration={500} offset={-140} 
+                                onClick={() => setIsDrawerOpen(false)}
+                            >
+                                Partitioning
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className="btn btn-ghost bg-purple-500 text-white normal-case text-lg mt-4"
+                                to="alphabet"
+                                smooth={true} duration={500} offset={-140} 
+                                onClick={() => setIsDrawerOpen(false)}
+                            >
+                                Alphabet
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            )}
         </div>
-
-            {/* Mobile Drawer */ }
-    {
-        isDrawerOpen && (
-            <div className="md:hidden bg-base-100 p-4 absolute top-16 left-0 w-full shadow-lg">
-                <ul className="menu p-2 shadow bg-base-100 rounded-box w-full">
-                    <li><Link className="bg-yellow-400 mb-4" to="/" onClick={() => setIsDrawerOpen(false)}>Home</Link></li>
-                    {/* Add other menu items here */}
-                    {
-                        user ? (
-                            <li>
-                                <button onClick={handleLogOutClick} className="btn btn-ghost bg-orange-400 normal-case text-lg">
-                                    Log Out
-                                </button>
-                            </li>
-                        ) : (
-                            <li>
-                                <button onClick={() => navigate("/login")} className="btn btn-ghost bg-orange-400 normal-case text-lg">
-                                    Login
-                                </button>
-                            </li>
-                        )
-                    }
-                </ul>
-            </div>
-        )
-    }
-        </div >
     );
 };
 
-// export default DaisyNavBar;
 export default MuiNavBar;

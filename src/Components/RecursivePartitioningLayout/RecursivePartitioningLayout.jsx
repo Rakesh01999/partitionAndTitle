@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { X } from 'lucide-react';
+import { Element } from 'react-scroll';
 
 const getRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
@@ -110,6 +111,8 @@ const RecursivePartitioningLayout = () => {
 
   return (
     <div className="w-full h-full">
+        <Element name='partitioning'>
+
       <Partition
         color={rootColor}
         onSplit={() => {}}
@@ -117,6 +120,7 @@ const RecursivePartitioningLayout = () => {
         depth={0}
         isRoot={true}
       />
+        </Element>
     </div>
   );
 };

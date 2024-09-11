@@ -1,86 +1,33 @@
-import React from "react";
-import { Typography, IconButton, Grid, Link } from "@mui/material";
-import { Facebook, Twitter, Instagram } from "@mui/icons-material";
+import React from 'react';
+import { FaGithub, FaEnvelope, FaFacebook, FaLinkedin } from 'react-icons/fa';
+
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white p-9">
-            <div className="container mx-auto">
-                <Grid container spacing={4} className="">
-                    <Grid item xs={12} sm={6} md={3} >
-                        <Typography variant="h6"  gutterBottom className="text-orange-200">
-                            About Us
-                        </Typography>
-                        <Typography variant="body2" className="mb-4">
-                            Welcome to Shop Ease! Discover a seamless shopping experience with our curated selection of quality products. Shop with ease and confidence!
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom className="text-orange-200">
-                            Contact
-                        </Typography>
-
-                        <Typography variant="body2" className="mb-2">
-                            Email: rbiswas01999@gmail.com
-                        </Typography>
-                        
-                        <Typography variant="body2">Phone: +880 1999647103</Typography>
-                        <Typography variant="body2" className="mb-2">
-                             City:Khulna, Country:Bangladesh
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom className="text-orange-200">
-                            Quick Links
-                        </Typography>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link href="/" color="inherit" underline="hover">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/aboutUs" color="inherit" underline="hover">
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" color="inherit" underline="hover">
-                                    Services
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contactUs" color="inherit" underline="hover">
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h6" gutterBottom className="text-orange-200">
-                            Follow Us
-                        </Typography>
-                        {/* <div className="flex space-x-4 "> */}
-                        <div className="space-x-4 ">
-                            <IconButton color="inherit" aria-label="Facebook">
-                                <Facebook />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="Twitter">
-                                <Twitter />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="Instagram">
-                                <Instagram />
-                            </IconButton>
+        <div>
+            <footer className="footer p-10 bg-gray-700 text-neutral-content">
+                <div className="container mx-auto flex flex-col items-center">
+                    <nav className="flex flex-col items-center gap-4">
+                        <a className="text-xl md:text-2xl text-purple-300 font-bold text-center">Get in Touch</a>
+                        <div className="flex flex-col items-center gap-4">
+                            
+                            <a href="mailto:rbiswas01999@gmail.com" className="link link-hover md:text-xl text-white flex items-center">
+                                <FaEnvelope className="mr-2" /> Gmail
+                            </a>
+                            <a href="https://www.linkedin.com/in/rakeshbiswas0199/" target="_blank" rel="noopener noreferrer" className="link link-hover md:text-xl text-white flex items-center">
+                                <FaLinkedin className="mr-2" /> Linked In
+                            </a>
+                            <a href="https://www.facebook.com/rakeshbiswas.biswas.9843/" target="_blank" rel="noopener noreferrer" className="link link-hover md:text-xl text-white flex items-center">
+                                <FaFacebook className="mr-2" /> Facebook
+                            </a>
                         </div>
-                    </Grid>
-                </Grid>
-                <Typography variant="body2" className="text-center mt-8 text-orange-200">
-                    <div className="mt-10">
-                        &copy; {new Date().getFullYear()} Shop Ease. All rights reserved.
-                    </div>
-                </Typography>
-            </div>
-        </footer>
+                    </nav>
+                    <nav className="text-white mt-6 md:text-lg text-center">
+                        <p>Copyright © 2024 <span className='text-purple-300'>Rakesh Biswas</span> - All rights reserved</p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
     );
 };
 

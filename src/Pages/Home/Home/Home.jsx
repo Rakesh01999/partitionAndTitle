@@ -19,7 +19,9 @@ const Home = () => {
             <div>
                 <h2 className="md:text-2xl font-bold text-purple-600 text-center my-8">Recursive Partitioning</h2>
             </div>
-            <RecursivePartitioningLayout></RecursivePartitioningLayout>
+            <div className="w-full h-100">
+                <RecursivePartitioningLayout></RecursivePartitioningLayout>
+            </div>
             <div>
                 <h2 className="md:text-2xl font-bold text-purple-600 text-center my-8">Alphabet Title Interaction</h2>
             </div>

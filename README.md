@@ -1,6 +1,6 @@
 # Recursive Partitioning & Title Interaction
 
-**Live Site:** [Shop Ease](https://shopease-j.web.app/)
+**Live Site:** [Recursive Partitioning & Title Interaction](https://shopease-j.web.app/)
 
 ## Overview
 

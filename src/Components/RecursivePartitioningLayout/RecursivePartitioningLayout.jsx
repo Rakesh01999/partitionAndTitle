@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { X } from 'lucide-react';
 
-const getRandomColor = () => `#${Math.floor(Math.random()*16777215).toString(16)}`;
+const getRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-const Partition = ({ onSplit, onRemove, color, depth }) => {
+const Partition = ({ onSplit, onRemove, color, depth, isRoot }) => {
   const [splitDirection, setSplitDirection] = useState(null);
   const [splitRatio, setSplitRatio] = useState(0.5);
+  const [children, setChildren] = useState([]);
 
-  const handleSplit = (direction) => {
+  const handleSplit = useCallback((direction) => {
     setSplitDirection(direction);
-    onSplit(direction);
-  };
+    setChildren([
+      { key: Date.now(), color },
+      { key: Date.now() + 1, color: getRandomColor() }
+    ]);
+    onSplit();
+  }, [color, onSplit]);
 
-  const handleResize = (e) => {
-    const container = e.currentTarget;
+  const handleResize = useCallback((e) => {
+    const container = e.currentTarget.parentElement;
     const { left, top, width, height } = container.getBoundingClientRect();
     const { clientX, clientY } = e;
-    
+
     let newRatio;
     if (splitDirection === 'vertical') {
       newRatio = (clientX - left) / width;
@@ -27,24 +32,43 @@ const Partition = ({ onSplit, onRemove, color, depth }) => {
     // Snap to quarters
     newRatio = Math.round(newRatio * 4) / 4;
     setSplitRatio(newRatio);
-  };
+  }, [splitDirection]);
+
+  const handleRemoveChild = useCallback((index) => {
+    setChildren(prevChildren => prevChildren.filter((_, i) => i !== index));
+    if (children.length <= 2) {
+      setSplitDirection(null);
+    }
+  }, [children.length]);
 
   if (splitDirection) {
     return (
-      <div 
-        className="relative flex" 
-        style={{ flexDirection: splitDirection === 'vertical' ? 'row' : 'column' }}
+      <div
+        className="relative flex w-full h-full"
+        style={{
+          flexDirection: splitDirection === 'vertical' ? 'row' : 'column',
+          overflow: 'hidden',
+        }}
       >
-        <div style={{ flex: splitRatio }}>
-          <Partition onSplit={onSplit} onRemove={onRemove} color={color} depth={depth + 1} />
-        </div>
-        <div 
-          className="absolute cursor-col-resize" 
+        {children.map((child, index) => (
+          <div key={child.key} style={{ flex: index === 0 ? splitRatio : 1 - splitRatio, position: 'relative' }}>
+            <Partition
+              onSplit={onSplit}
+              onRemove={() => handleRemoveChild(index)}
+              color={child.color}
+              depth={depth + 1}
+              isRoot={false}
+            />
+          </div>
+        ))}
+        <div
+          className={`absolute ${splitDirection === 'vertical' ? 'cursor-col-resize' : 'cursor-row-resize'}`}
           style={{
-            [splitDirection === 'vertical' ? 'left' : 'top']: `${splitRatio * 100}%`,
+            [splitDirection === 'vertical' ? 'left' : 'top']: `calc(${splitRatio * 100}% - 2px)`,
             [splitDirection === 'vertical' ? 'width' : 'height']: '4px',
             [splitDirection === 'vertical' ? 'height' : 'width']: '100%',
             backgroundColor: 'black',
+            zIndex: 10,
           }}
           onMouseDown={() => {
             const handleMouseMove = (e) => handleResize(e);
@@ -56,18 +80,18 @@ const Partition = ({ onSplit, onRemove, color, depth }) => {
             document.addEventListener('mouseup', handleMouseUp);
           }}
         />
-        <div style={{ flex: 1 - splitRatio }}>
-          <Partition onSplit={onSplit} onRemove={onRemove} color={getRandomColor()} depth={depth + 1} />
-        </div>
       </div>
     );
   }
 
   return (
-    <div className="relative p-4" style={{ backgroundColor: color, minHeight: '100px' }}>
-      {depth > 0 && (
-        <button 
-          className="absolute top-1 right-1 p-1 bg-white rounded"
+    <div
+      className="relative w-full h-full p-4 flex flex-col justify-center items-center"
+      style={{ backgroundColor: color, minHeight: '100px', overflow: 'hidden' }}
+    >
+      {!isRoot && (
+        <button
+          className="absolute top-1 right-1 p-1 bg-white rounded z-10"
           onClick={onRemove}
         >
           <X size={16} />
@@ -85,8 +109,14 @@ const RecursivePartitioningLayout = () => {
   const [rootColor] = useState(getRandomColor());
 
   return (
-    <div className="w-full h-screen">
-      <Partition color={rootColor} onSplit={() => {}} onRemove={() => {}} depth={0} />
+    <div className="w-full h-full">
+      <Partition
+        color={rootColor}
+        onSplit={() => {}}
+        onRemove={() => {}}
+        depth={0}
+        isRoot={true}
+      />
     </div>
   );
 };

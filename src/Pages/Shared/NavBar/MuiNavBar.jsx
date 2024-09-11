@@ -17,13 +17,13 @@ const MuiNavBar = () => {
     };
 
     return (
-        <div className="navbar bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg fixed top-0 w-full z-50 max-w-screen-xl mx-auto">
-            {/* <div className="navbar bg-gradient-to-r from-orange-500 to-yellow-400 shadow-lg fixed top-0 w-full z-50"> */}
+        <div className="navbar bg-gradient-to-r from-purple-500 to-pink-300 shadow-lg fixed top-0 w-full z-50 max-w-screen-xl mx-auto">
+            
             <div className="container mx-auto flex justify-between items-center">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-                <img src={logo} alt="Logo" className="bg-yellow-400 rounded-3xl h-16" />
-                <span className="ml-2 text-xl md:text-3xl text-white font-bold">Shop Ease</span>
+                {/* <img src={logo} alt="Logo" className="bg-yellow-400 rounded-3xl h-16" /> */}
+                <span className="ml-2 text-xl md:text-3xl text-white font-bold">Recursive Partitioning & Title Interaction</span>
             </Link>
 
             {/* Desktop Menu */}

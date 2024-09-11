@@ -8,9 +8,9 @@ const Main = () => {
     const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register');
     return (
         <div>
-            {noHeaderFooter || <MuiNavBar></MuiNavBar>}
+            {/* {noHeaderFooter || <MuiNavBar></MuiNavBar>} */}
             <Outlet></Outlet>
-            {noHeaderFooter || <MyFooter></MyFooter>}
+            {/* {noHeaderFooter || <MyFooter></MyFooter>} */}
         </div>
     );
 };

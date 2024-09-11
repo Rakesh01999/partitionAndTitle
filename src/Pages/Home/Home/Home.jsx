@@ -1,35 +1,31 @@
 import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
-import Category from "../Category/Category";
-import Featured from "../Featured/Featured";
-import PopularMenu from "../PopularMenu/PopularMenu";
-import Testimonials from "../Testimonials/Testimonials";
-import PremiumMemberProfile from "../PremiumMemberProfile/PremiumMemberProfile";
-import HowItWorks from "../HowItWorks/HowItWorks";
-import SuccessCounter from "../SuccessCounter/SuccessCounter";
-import SuccessStory from "../SuccessStory/SuccessStory";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Biodatas from "../../Biodatas/Biodatas";
 import Products from "../Products/Products";
+
+import RecursivePartitioningLayout from "../../../Components/RecursivePartitioningLayout/RecursivePartitioningLayout";
+import AlphabetTileInteraction from "../../../Components/AlphabetTileInteraction/AlphabetTileInteraction";
 
 const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Shop Ease | Home</title>
+                <title>Recusive Partioning | Home</title>
             </Helmet>
-            <Banner></Banner>
-            <Products></Products>
-            {/* <PremiumMemberProfile></PremiumMemberProfile> */}
-            {/* <HowItWorks></HowItWorks> */}
-            {/* <SuccessCounter></SuccessCounter> */}
-            {/* <SuccessStory></SuccessStory> */}
-            {/* <Category></Category> */}
-            {/* <PopularMenu></PopularMenu> */}
-            {/* <Featured></Featured> */}
-            {/* <Testimonials></Testimonials> */}
+            {/* <Banner></Banner> */}
+            {/* <Products></Products> */}
+            <div>
+                <h2 className="md:text-2xl font-bold text-purple-600 text-center my-8">Recursive Partitioning</h2>
+            </div>
+            <RecursivePartitioningLayout></RecursivePartitioningLayout>
+            <div>
+                <h2 className="md:text-2xl font-bold text-purple-600 text-center my-8">Alphabet Title Interaction</h2>
+            </div>
+            <div className="mb-10">
+                <AlphabetTileInteraction></AlphabetTileInteraction>
+            </div>
         </div>
     );
 };

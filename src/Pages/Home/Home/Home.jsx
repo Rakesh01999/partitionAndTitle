@@ -1,9 +1,7 @@
 import { Helmet } from "react-helmet";
-import Banner from "../Banner/Banner";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Products from "../Products/Products";
 
 import RecursivePartitioningLayout from "../../../Components/RecursivePartitioningLayout/RecursivePartitioningLayout";
 import AlphabetTileInteraction from "../../../Components/AlphabetTileInteraction/AlphabetTileInteraction";
@@ -15,8 +13,6 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            {/* <Banner></Banner> */}
-            {/* <Products></Products> */}
             <div className="bg-pink-300 mt-24">
                 <h2 className="md:text-2xl font-bold text-purple-700 text-center my-8">Recursive Partitioning</h2>
             </div>

@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
-import { AuthContext } from '../providers/AuthProvider';
+// import { AuthContext } from '../providers/AuthProvider';
 import useAuth from '../../hooks/useAuth';
 import { Button, Container, TextField } from '@mui/material';
 import useAxiosPublic from '../../hooks/useAxiosPublic';

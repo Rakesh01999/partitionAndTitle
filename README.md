@@ -1,35 +1,20 @@
 # Recursive Partitioning & Title Interaction
 
-**Live Site:** [Recursive Partitioning & Title Interaction](https://shopease-j.web.app/)
+**Live Site:** [Recursive Partitioning & Title Interaction](https://partitioning-alphabet-interaction.netlify.app/)
 
 ## Overview
-
+Recursive Partitioning & Title Interaction is an interactive web application that allows users to partition elements recursively while engaging with title interactions. This project is designed with a modern UI/UX .
 
 ## Features
 
-1. **Robust Authentication**:
- * Multiple Login Options: Supports email/password and Google sign-in for a flexible user experience.
- * Strong Password Validation: Enforces secure passwords with real-time validation feedback.   
-2. **Modern UI/UX**:
+1. **Modern UI/UX**:
  * Custom Theming: Consistent orange-themed design with responsive layout for all devices.
- * Interactive Animations: Engaging user interactions with SweetAlert2, react-toastify, and subtle animations.
-   
-3. **Enhanced Security**:
- * JWT Authentication: Secure session management with JSON Web Tokens.
- * Firebase Integration: Reliable user authentication and real-time data handling.
-
-4. **Optimized Performance**:
+ 
+2. **Optimized Performance**:
  * Lazy Loading: Efficient loading for faster performance.
  * Material UI: Clean, minimalist design focused on speed and aesthetics.
-   
-5. **Accessible Design**:
- * Keyboard Navigation: Fully navigable using the keyboard.
- * Screen Reader Friendly: Compatible with screen readers for inclusive access.
-
-6. **Seamless Backend Integration**:
- * Admin can track total revenue generated from biodata contact request payments   directly from the dashboard.
-   
-7. **Mobile Responsive**: 
+      
+3. **Mobile Responsive**: 
  * The site is fully responsive, providing a seamless experience across all devices including desktops, tablets, and smartphones.
 
 
